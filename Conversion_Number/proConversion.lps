@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="10"/>
+    <BuildModes Active="Default"/>
+    <Units Count="2">
+      <Unit0>
+        <Filename Value="proConversion.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="2"/>
+        <CursorPos Y="20"/>
+        <UsageCount Value="31"/>
+        <Loaded Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="unitconv.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="unitConv"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="222"/>
+        <CursorPos Y="224"/>
+        <UsageCount Value="31"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit1>
+    </Units>
+    <JumpHistory Count="30" HistoryIndex="29">
+      <Position1>
+        <Filename Value="unitconv.pas"/>
+        <Caret Line="244" TopLine="239"/>
+      </Position1>
+      <Position2>
+        <Filename Value="unitconv.pas"/>
+        <Caret Line="243" TopLine="238"/>
+      </Position2>
+      <Position3>
+        <Filename Value="unitconv.pas"/>
+        <Caret Line="242" TopLine="237"/>
+      </Position3>
+      <Position4>
+        <Filename Value="unitconv.pas"/>
+        <Caret Line="241" TopLine="236"/>
+      </Position4>
+      <Position5>
+        <Filename Value="unitconv.pas"/>
+        <Caret Line="240" TopLine="235"/>
+      </Position5>
+      <Position6>
+        <Filename Value="unitconv.pas"/>
+        <Caret Line="239" TopLine="234"/>
+      </Position6>
+      <Position7>
+        <Filename Value="unitconv.pas"/>
+        <Caret Line="238" TopLine="233"/>
+      </Position7>
+      <Position8>
+        <Filename Value="unitconv.pas"/>
+        <Caret Line="237" TopLine="232"/>
+      </Position8>
+      <Position9>
+        <Filename Value="unitconv.pas"/>
+        <Caret Line="236" TopLine="231"/>
+      </Position9>
+      <Position10>
+        <Filename Value="unitconv.pas"/>
+        <Caret Line="235" TopLine="230"/>
+      </Position10>
+      <Position11>
+        <Filename Value="unitconv.pas"/>
+        <Caret Line="234" TopLine="229"/>
+      </Position11>
+      <Position12>
+        <Filename Value="unitconv.pas"/>
+        <Caret Line="233" TopLine="228"/>
+      </Position12>
+      <Position13>
+        <Filename Value="unitconv.pas"/>
+        <Caret Line="232" TopLine="227"/>
+      </Position13>
+      <Position14>
+        <Filename Value="unitconv.pas"/>
+        <Caret Line="231" TopLine="226"/>
+      </Position14>
+      <Position15>
+        <Filename Value="unitconv.pas"/>
+        <Caret Line="230" TopLine="225"/>
+      </Position15>
+      <Position16>
+        <Filename Value="unitconv.pas"/>
+        <Caret Line="229" TopLine="224"/>
+      </Position16>
+      <Position17>
+        <Filename Value="unitconv.pas"/>
+        <Caret Line="230" TopLine="225"/>
+      </Position17>
+      <Position18>
+        <Filename Value="unitconv.pas"/>
+        <Caret Line="229" TopLine="224"/>
+      </Position18>
+      <Position19>
+        <Filename Value="unitconv.pas"/>
+        <Caret Line="201" Column="77" TopLine="194"/>
+      </Position19>
+      <Position20>
+        <Filename Value="unitconv.pas"/>
+        <Caret Line="226" Column="2" TopLine="220"/>
+      </Position20>
+      <Position21>
+        <Filename Value="unitconv.pas"/>
+        <Caret Line="395" Column="49" TopLine="380"/>
+      </Position21>
+      <Position22>
+        <Filename Value="unitconv.pas"/>
+        <Caret Line="393" TopLine="380"/>
+      </Position22>
+      <Position23>
+        <Filename Value="unitconv.pas"/>
+        <Caret Line="400" Column="3" TopLine="381"/>
+      </Position23>
+      <Position24>
+        <Filename Value="unitconv.pas"/>
+        <Caret Line="407" Column="3" TopLine="388"/>
+      </Position24>
+      <Position25>
+        <Filename Value="unitconv.pas"/>
+        <Caret Line="409" Column="8" TopLine="400"/>
+      </Position25>
+      <Position26>
+        <Filename Value="unitconv.pas"/>
+        <Caret Line="224" Column="9" TopLine="220"/>
+      </Position26>
+      <Position27>
+        <Filename Value="unitconv.pas"/>
+        <Caret Line="403" Column="9" TopLine="399"/>
+      </Position27>
+      <Position28>
+        <Filename Value="unitconv.pas"/>
+        <Caret Line="231" Column="3" TopLine="221"/>
+      </Position28>
+      <Position29>
+        <Filename Value="unitconv.pas"/>
+        <Caret Line="398" Column="3" TopLine="395"/>
+      </Position29>
+      <Position30>
+        <Filename Value="unitconv.pas"/>
+        <Caret TopLine="52"/>
+      </Position30>
+    </JumpHistory>
+  </ProjectSession>
+</CONFIG>
