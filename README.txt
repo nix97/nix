@@ -1,0 +1,1 @@
+Conversion Number build in Lazarus 1.6.4 is an app for converting number from base to base (binary, octal, decimal, hexadecimal).   
