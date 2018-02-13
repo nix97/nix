@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="10"/>
+    <BuildModes Active="Default"/>
+    <Units Count="2">
+      <Unit0>
+        <Filename Value="proDeterminan.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="20"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="undet.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="unDet"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="55"/>
+        <CursorPos X="20" Y="62"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit1>
+    </Units>
+    <JumpHistory Count="30" HistoryIndex="29">
+      <Position1>
+        <Filename Value="undet.pas"/>
+      </Position1>
+      <Position2>
+        <Filename Value="undet.pas"/>
+        <Caret Line="44" Column="25" TopLine="31"/>
+      </Position2>
+      <Position3>
+        <Filename Value="undet.pas"/>
+        <Caret Line="41" Column="15" TopLine="31"/>
+      </Position3>
+      <Position4>
+        <Filename Value="undet.pas"/>
+        <Caret Line="42" Column="20" TopLine="31"/>
+      </Position4>
+      <Position5>
+        <Filename Value="undet.pas"/>
+        <Caret Line="40" Column="17" TopLine="31"/>
+      </Position5>
+      <Position6>
+        <Filename Value="undet.pas"/>
+        <Caret Line="41" Column="2" TopLine="31"/>
+      </Position6>
+      <Position7>
+        <Filename Value="undet.pas"/>
+        <Caret Line="48" Column="28" TopLine="33"/>
+      </Position7>
+      <Position8>
+        <Filename Value="undet.pas"/>
+        <Caret Line="49" Column="28" TopLine="34"/>
+      </Position8>
+      <Position9>
+        <Filename Value="undet.pas"/>
+        <Caret Line="51" Column="28" TopLine="36"/>
+      </Position9>
+      <Position10>
+        <Filename Value="undet.pas"/>
+        <Caret Line="60" Column="51" TopLine="49"/>
+      </Position10>
+      <Position11>
+        <Filename Value="undet.pas"/>
+        <Caret Line="95" Column="13" TopLine="76"/>
+      </Position11>
+      <Position12>
+        <Filename Value="undet.pas"/>
+        <Caret Line="61" Column="19" TopLine="54"/>
+      </Position12>
+      <Position13>
+        <Filename Value="undet.pas"/>
+        <Caret Line="66" Column="42" TopLine="57"/>
+      </Position13>
+      <Position14>
+        <Filename Value="undet.pas"/>
+        <Caret Line="72" Column="26" TopLine="63"/>
+      </Position14>
+      <Position15>
+        <Filename Value="undet.pas"/>
+        <Caret Line="59" Column="19" TopLine="55"/>
+      </Position15>
+      <Position16>
+        <Filename Value="undet.pas"/>
+        <Caret Line="58" Column="7" TopLine="48"/>
+      </Position16>
+      <Position17>
+        <Filename Value="undet.pas"/>
+        <Caret Line="60" Column="6" TopLine="50"/>
+      </Position17>
+      <Position18>
+        <Filename Value="undet.pas"/>
+        <Caret Line="102" Column="49" TopLine="90"/>
+      </Position18>
+      <Position19>
+        <Filename Value="undet.pas"/>
+        <Caret Line="83" TopLine="74"/>
+      </Position19>
+      <Position20>
+        <Filename Value="undet.pas"/>
+        <Caret Line="101" Column="5" TopLine="90"/>
+      </Position20>
+      <Position21>
+        <Filename Value="undet.pas"/>
+        <Caret Line="66" Column="11" TopLine="63"/>
+      </Position21>
+      <Position22>
+        <Filename Value="undet.pas"/>
+        <Caret Line="104" Column="52" TopLine="89"/>
+      </Position22>
+      <Position23>
+        <Filename Value="undet.pas"/>
+        <Caret Line="106" Column="5" TopLine="89"/>
+      </Position23>
+      <Position24>
+        <Filename Value="undet.pas"/>
+        <Caret Line="101" Column="4" TopLine="90"/>
+      </Position24>
+      <Position25>
+        <Filename Value="undet.pas"/>
+        <Caret Line="103" Column="52" TopLine="90"/>
+      </Position25>
+      <Position26>
+        <Filename Value="undet.pas"/>
+        <Caret Line="92" Column="4" TopLine="81"/>
+      </Position26>
+      <Position27>
+        <Filename Value="undet.pas"/>
+        <Caret Line="94" Column="6" TopLine="81"/>
+      </Position27>
+      <Position28>
+        <Filename Value="undet.pas"/>
+        <Caret Line="73" Column="4" TopLine="68"/>
+      </Position28>
+      <Position29>
+        <Filename Value="undet.pas"/>
+        <Caret Line="94" Column="36" TopLine="81"/>
+      </Position29>
+      <Position30>
+        <Filename Value="undet.pas"/>
+        <Caret Line="62" Column="35" TopLine="55"/>
+      </Position30>
+    </JumpHistory>
+  </ProjectSession>
+</CONFIG>
