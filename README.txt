@@ -35,6 +35,11 @@ Subject by Folder Name :
   13. Intersection two curves
   14  Area two curves
   15. Interpolation (Cubic Spline)
+
+5. WaveEquation.zip 
+  Matlab sourcecode file in GUI (*.m and *.fig)
     
+Another works(Math stuff ,app and sourcecode on   https://bitbucket.org/nixz97/nix/downloads/)
+
 e-mail: lukassetiawan@yahoo.com
 Facebook: search --> Metode Numerik - Plus Programnya 
