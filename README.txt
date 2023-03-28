@@ -38,6 +38,15 @@ Subject by Folder Name :
 
 5. WaveEquation.zip 
   Matlab sourcecode file in GUI (*.m and *.fig)
+
+6. PDEs Solver(Partial Differential Equation Solver)x
+This project is Win app build in Visual Studio 2017 CE.
+Menu of app as follows:
+-Wave equation
+-Heat equation
+-Laplace's equation
+-Poisson's equation
+
     
 Another works(Math stuff ,app and sourcecode on   https://bitbucket.org/nixz97/nix/downloads/)
 
