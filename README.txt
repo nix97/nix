@@ -40,7 +40,7 @@ Subject by Folder Name :
   Matlab sourcecode file in GUI (*.m and *.fig)
 
 6. PDEs Solver(Partial Differential Equation Solver)x
-This project is Win app build in Visual Studio 2017 CE.
+This project is Win app build in Visual Studio 2017 CE(C# .Net).
 Menu of app as follows:
 -Wave equation
 -Heat equation
