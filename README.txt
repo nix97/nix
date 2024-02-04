@@ -12,9 +12,10 @@ The coverage of this problem are:
 2. System of Ordinary Differential Equation using Runge-Kutta fourth-order formula(RK4)
 >>app ODE System Solver
 
-Solving of Two Differential Equation
+Solving of First-Order Two Differential Equation
 Y'(t)=F(t,x,y) and
-X'(t)=F(t,x,y) use IVP(Initial Value Problem)
+X'(t)=F(t,x,y) 
+IVP(Initial Value Problem)
 
 3. Third-Order Differential Equation 
 using Runge-Kutta fourth-order formula(RK4)
