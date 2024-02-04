@@ -10,7 +10,7 @@ The coverage of this problem are:
 -Poisson's equation using Finite-Difference     method
 
 2. System of Ordinary Differential Equation using Runge-Kutta fourth-order formula(RK4)
->>app System of ODE Solver
+>>app ODE System Solver
 
 Solving of Two Differential Equation
 Y'(t)=F(t,x,y) and
