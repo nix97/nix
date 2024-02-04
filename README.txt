@@ -71,9 +71,21 @@ To approximate the solution of the initial value problem
 (ivp) y ' =f(x,y) with y(a)=yo over [a,b] and 
 subinterval M.
 
+14. Geometry Transformation
+This app for Basic Transformation of Geometry.
+The transformation are Translation, Rotation and Scaling.
+
+15. Polynomial Division
+To dividing Polynomial by other Polynomial
+On the way :
+Dividend = Quotient x Divisor + Remainder
+
+16. Area of Irregular Polygon
+App for counting Area of Irregular Polygon.
+For counting this problem using Heron's formula.
 
 
-    
+
 Another works(Math stuff ,app and sourcecode on   https://bitbucket.org/nixz97/nix/downloads/)
 
 All project created by Lukas Setiawan
