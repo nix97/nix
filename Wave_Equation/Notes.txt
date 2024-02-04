@@ -1,0 +1,11 @@
+
+Notes :
+
+1. It's available Sourcecode in Matlab
+
+2. Also app (*.exe) :
+
+ -to run *.exe must be install MCR(matlab compiler runtime) first 
+  at https://www.mathworks.com/products/compiler/matlab-runtime.html
+ 
+ -Select version R2016a (9.0.1) 64-bit where my App build. 

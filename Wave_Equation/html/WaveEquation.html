@@ -1,0 +1,897 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>WaveEquation</title><meta name="generator" content="MATLAB 9.0"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2023-11-22"><meta name="DC.source" content="WaveEquation.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><pre class="codeinput"><span class="keyword">function</span> varargout = WaveEquation(varargin)
+<span class="comment">% WAVEEQUATION MATLAB code for WaveEquation.fig</span>
+<span class="comment">%      WAVEEQUATION, by itself, creates a new WAVEEQUATION or raises the existing</span>
+<span class="comment">%      singleton*.</span>
+<span class="comment">%</span>
+<span class="comment">%      H = WAVEEQUATION returns the handle to a new WAVEEQUATION or the handle to</span>
+<span class="comment">%      the existing singleton*.</span>
+<span class="comment">%</span>
+<span class="comment">%      WAVEEQUATION('CALLBACK',hObject,eventData,handles,...) calls the local</span>
+<span class="comment">%      function named CALLBACK in WAVEEQUATION.M with the given input arguments.</span>
+<span class="comment">%</span>
+<span class="comment">%      WAVEEQUATION('Property','Value',...) creates a new WAVEEQUATION or raises the</span>
+<span class="comment">%      existing singleton*.  Starting from the left, property value pairs are</span>
+<span class="comment">%      applied to the GUI before WaveEquation_OpeningFcn gets called.  An</span>
+<span class="comment">%      unrecognized property name or invalid value makes property application</span>
+<span class="comment">%      stop.  All inputs are passed to WaveEquation_OpeningFcn via varargin.</span>
+<span class="comment">%</span>
+<span class="comment">%      *See GUI Options on GUIDE's Tools menu.  Choose "GUI allows only one</span>
+<span class="comment">%      instance to run (singleton)".</span>
+<span class="comment">%</span>
+<span class="comment">% See also: GUIDE, GUIDATA, GUIHANDLES</span>
+
+<span class="comment">% Edit the above text to modify the response to help WaveEquation</span>
+
+<span class="comment">% Last Modified by GUIDE v2.5 02-Aug-2018 16:33:18</span>
+
+<span class="comment">% Begin initialization code - DO NOT EDIT</span>
+gui_Singleton = 1;
+gui_State = struct(<span class="string">'gui_Name'</span>,       mfilename, <span class="keyword">...</span>
+                   <span class="string">'gui_Singleton'</span>,  gui_Singleton, <span class="keyword">...</span>
+                   <span class="string">'gui_OpeningFcn'</span>, @WaveEquation_OpeningFcn, <span class="keyword">...</span>
+                   <span class="string">'gui_OutputFcn'</span>,  @WaveEquation_OutputFcn, <span class="keyword">...</span>
+                   <span class="string">'gui_LayoutFcn'</span>,  [] , <span class="keyword">...</span>
+                   <span class="string">'gui_Callback'</span>,   []);
+<span class="keyword">if</span> nargin &amp;&amp; ischar(varargin{1})
+    gui_State.gui_Callback = str2func(varargin{1});
+<span class="keyword">end</span>
+
+<span class="keyword">if</span> nargout
+    [varargout{1:nargout}] = gui_mainfcn(gui_State, varargin{:});
+<span class="keyword">else</span>
+    gui_mainfcn(gui_State, varargin{:});
+<span class="keyword">end</span>
+<span class="comment">% End initialization code - DO NOT EDIT</span>
+
+
+<span class="comment">% --- Executes just before WaveEquation is made visible.</span>
+<span class="keyword">function</span> WaveEquation_OpeningFcn(hObject, eventdata, handles, varargin)
+<span class="comment">% This function has no output args, see OutputFcn.</span>
+<span class="comment">% hObject    handle to figure</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+<span class="comment">% varargin   command line arguments to WaveEquation (see VARARGIN)</span>
+
+<span class="comment">% Choose default command line output for WaveEquation</span>
+handles.output = hObject;
+
+<span class="comment">% Update handles structure</span>
+guidata(hObject, handles);
+
+<span class="comment">% UIWAIT makes WaveEquation wait for user response (see UIRESUME)</span>
+<span class="comment">% uiwait(handles.figure1);</span>
+
+
+<span class="comment">% --- Outputs from this function are returned to the command line.</span>
+<span class="keyword">function</span> varargout = WaveEquation_OutputFcn(hObject, eventdata, handles)
+<span class="comment">% varargout  cell array for returning output args (see VARARGOUT);</span>
+<span class="comment">% hObject    handle to figure</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+
+<span class="comment">% Get default command line output from handles structure</span>
+varargout{1} = handles.output;
+
+
+
+<span class="keyword">function</span> editF_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to editF (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+
+<span class="comment">% Hints: get(hObject,'String') returns contents of editF as text</span>
+<span class="comment">%        str2double(get(hObject,'String')) returns contents of editF as a double</span>
+
+
+<span class="comment">% --- Executes during object creation, after setting all properties.</span>
+<span class="keyword">function</span> editF_CreateFcn(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to editF (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    empty - handles not created until after all CreateFcns called</span>
+
+<span class="comment">% Hint: edit controls usually have a white background on Windows.</span>
+<span class="comment">%       See ISPC and COMPUTER.</span>
+<span class="keyword">if</span> ispc &amp;&amp; isequal(get(hObject,<span class="string">'BackgroundColor'</span>), get(0,<span class="string">'defaultUicontrolBackgroundColor'</span>))
+    set(hObject,<span class="string">'BackgroundColor'</span>,<span class="string">'white'</span>);
+<span class="keyword">end</span>
+
+
+
+<span class="keyword">function</span> editG_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to editG (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+
+<span class="comment">% Hints: get(hObject,'String') returns contents of editG as text</span>
+<span class="comment">%        str2double(get(hObject,'String')) returns contents of editG as a double</span>
+
+
+<span class="comment">% --- Executes during object creation, after setting all properties.</span>
+<span class="keyword">function</span> editG_CreateFcn(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to editG (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    empty - handles not created until after all CreateFcns called</span>
+
+<span class="comment">% Hint: edit controls usually have a white background on Windows.</span>
+<span class="comment">%       See ISPC and COMPUTER.</span>
+<span class="keyword">if</span> ispc &amp;&amp; isequal(get(hObject,<span class="string">'BackgroundColor'</span>), get(0,<span class="string">'defaultUicontrolBackgroundColor'</span>))
+    set(hObject,<span class="string">'BackgroundColor'</span>,<span class="string">'white'</span>);
+<span class="keyword">end</span>
+
+
+
+<span class="keyword">function</span> edita_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to edita (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+
+<span class="comment">% Hints: get(hObject,'String') returns contents of edita as text</span>
+<span class="comment">%        str2double(get(hObject,'String')) returns contents of edita as a double</span>
+
+
+<span class="comment">% --- Executes during object creation, after setting all properties.</span>
+<span class="keyword">function</span> edita_CreateFcn(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to edita (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    empty - handles not created until after all CreateFcns called</span>
+
+<span class="comment">% Hint: edit controls usually have a white background on Windows.</span>
+<span class="comment">%       See ISPC and COMPUTER.</span>
+<span class="keyword">if</span> ispc &amp;&amp; isequal(get(hObject,<span class="string">'BackgroundColor'</span>), get(0,<span class="string">'defaultUicontrolBackgroundColor'</span>))
+    set(hObject,<span class="string">'BackgroundColor'</span>,<span class="string">'white'</span>);
+<span class="keyword">end</span>
+
+
+
+<span class="keyword">function</span> editb_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to editb (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+
+<span class="comment">% Hints: get(hObject,'String') returns contents of editb as text</span>
+<span class="comment">%        str2double(get(hObject,'String')) returns contents of editb as a double</span>
+
+
+<span class="comment">% --- Executes during object creation, after setting all properties.</span>
+<span class="keyword">function</span> editb_CreateFcn(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to editb (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    empty - handles not created until after all CreateFcns called</span>
+
+<span class="comment">% Hint: edit controls usually have a white background on Windows.</span>
+<span class="comment">%       See ISPC and COMPUTER.</span>
+<span class="keyword">if</span> ispc &amp;&amp; isequal(get(hObject,<span class="string">'BackgroundColor'</span>), get(0,<span class="string">'defaultUicontrolBackgroundColor'</span>))
+    set(hObject,<span class="string">'BackgroundColor'</span>,<span class="string">'white'</span>);
+<span class="keyword">end</span>
+
+
+
+<span class="keyword">function</span> editc_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to editc (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+
+<span class="comment">% Hints: get(hObject,'String') returns contents of editc as text</span>
+<span class="comment">%        str2double(get(hObject,'String')) returns contents of editc as a double</span>
+
+
+<span class="comment">% --- Executes during object creation, after setting all properties.</span>
+<span class="keyword">function</span> editc_CreateFcn(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to editc (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    empty - handles not created until after all CreateFcns called</span>
+
+<span class="comment">% Hint: edit controls usually have a white background on Windows.</span>
+<span class="comment">%       See ISPC and COMPUTER.</span>
+<span class="keyword">if</span> ispc &amp;&amp; isequal(get(hObject,<span class="string">'BackgroundColor'</span>), get(0,<span class="string">'defaultUicontrolBackgroundColor'</span>))
+    set(hObject,<span class="string">'BackgroundColor'</span>,<span class="string">'white'</span>);
+<span class="keyword">end</span>
+
+
+
+<span class="keyword">function</span> editm_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to editm (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+
+<span class="comment">% Hints: get(hObject,'String') returns contents of editm as text</span>
+<span class="comment">%        str2double(get(hObject,'String')) returns contents of editm as a double</span>
+
+
+<span class="comment">% --- Executes during object creation, after setting all properties.</span>
+<span class="keyword">function</span> editm_CreateFcn(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to editm (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    empty - handles not created until after all CreateFcns called</span>
+
+<span class="comment">% Hint: edit controls usually have a white background on Windows.</span>
+<span class="comment">%       See ISPC and COMPUTER.</span>
+<span class="keyword">if</span> ispc &amp;&amp; isequal(get(hObject,<span class="string">'BackgroundColor'</span>), get(0,<span class="string">'defaultUicontrolBackgroundColor'</span>))
+    set(hObject,<span class="string">'BackgroundColor'</span>,<span class="string">'white'</span>);
+<span class="keyword">end</span>
+
+
+
+<span class="keyword">function</span> editn_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to editn (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+
+<span class="comment">% Hints: get(hObject,'String') returns contents of editn as text</span>
+<span class="comment">%        str2double(get(hObject,'String')) returns contents of editn as a double</span>
+
+
+<span class="comment">% --- Executes during object creation, after setting all properties.</span>
+<span class="keyword">function</span> editn_CreateFcn(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to editn (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    empty - handles not created until after all CreateFcns called</span>
+
+<span class="comment">% Hint: edit controls usually have a white background on Windows.</span>
+<span class="comment">%       See ISPC and COMPUTER.</span>
+<span class="keyword">if</span> ispc &amp;&amp; isequal(get(hObject,<span class="string">'BackgroundColor'</span>), get(0,<span class="string">'defaultUicontrolBackgroundColor'</span>))
+    set(hObject,<span class="string">'BackgroundColor'</span>,<span class="string">'white'</span>);
+<span class="keyword">end</span>
+
+
+
+<span class="keyword">function</span> editResult_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to editResult (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+
+<span class="comment">% Hints: get(hObject,'String') returns contents of editResult as text</span>
+<span class="comment">%        str2double(get(hObject,'String')) returns contents of editResult as a double</span>
+
+
+<span class="comment">% --- Executes during object creation, after setting all properties.</span>
+<span class="keyword">function</span> editResult_CreateFcn(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to editResult (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    empty - handles not created until after all CreateFcns called</span>
+
+<span class="comment">% Hint: edit controls usually have a white background on Windows.</span>
+<span class="comment">%       See ISPC and COMPUTER.</span>
+<span class="keyword">if</span> ispc &amp;&amp; isequal(get(hObject,<span class="string">'BackgroundColor'</span>), get(0,<span class="string">'defaultUicontrolBackgroundColor'</span>))
+    set(hObject,<span class="string">'BackgroundColor'</span>,<span class="string">'white'</span>);
+<span class="keyword">end</span>
+
+
+<span class="comment">% --- Executes on button press in Runbutton.</span>
+<span class="keyword">function</span> Runbutton_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to Runbutton (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+
+<span class="comment">% Wave Equation Solver by Lukas Setiawan (e-mail: lukassetiawan@yahoo.com)</span>
+
+clc
+
+a=str2double(get(handles.edita,<span class="string">'String'</span>));
+b=str2double(get(handles.editb,<span class="string">'String'</span>));
+c=str2double(get(handles.editc,<span class="string">'String'</span>));
+m=str2double(get(handles.editm,<span class="string">'String'</span>));
+n=str2double(get(handles.editn,<span class="string">'String'</span>));
+
+<span class="keyword">if</span> (m~=n)
+  msgbox(<span class="string">'Dimension of the grid (m &amp; n) must be the same !!!'</span>)
+  stop;
+<span class="keyword">end</span>
+
+ h=a/(n-1);
+ k=b/(m-1);
+ r=(c*k)/h;
+ r2=r*r;
+ r22=(r*r)/2;
+ s1=1-(r*r);
+ s2=2-(2*r*r);
+
+ F=get(handles.editF,<span class="string">'String'</span>);
+ Fx=str2func([<span class="string">'@(x)'</span> F]);
+ G=get(handles.editG,<span class="string">'String'</span>);
+ Gx=str2func([<span class="string">'@(x)'</span> G]);
+
+ F3=zeros(m); <span class="comment">% to initialize array</span>
+ G3=zeros(n);
+
+ <span class="keyword">for</span> i=2:n-1
+  x=h*(i-1);
+  F3(i)=Fx(x);
+  G3(i)=Gx(x);
+ <span class="keyword">end</span>;
+
+ <span class="keyword">for</span> j=1:m
+   u(1,j)=0;
+   u(n,j)=0;
+ <span class="keyword">end</span>;
+
+ <span class="keyword">for</span> i=2:n-1
+   u(i,1)=F3(i);
+   u(i,2)=s1*F3(i)+k*G3(i)+r22*(F3(i+1)+F3(i-1));
+ <span class="keyword">end</span>;
+
+ <span class="keyword">for</span> j=3:m
+  <span class="keyword">for</span> i=2 :n-1
+    u(i,j)=s2*u(i,j-1)+r2*(u(i-1,j-1)+u(i+1,j-1))-u(i,j-2);
+  <span class="keyword">end</span>;
+ <span class="keyword">end</span>;
+
+
+   o=<span class="string">''</span>;
+   p=0;
+   <span class="keyword">for</span> j=1 : n
+    <span class="keyword">for</span> i=1 : m
+       p=p+1;
+       x=h*(i-1);
+       t=k*(j-1);
+       o=[o sprintf(<span class="string">'%i %20f %20f %25e \n'</span>,p,x,t,u(i,j))];
+    <span class="keyword">end</span>;
+   <span class="keyword">end</span>;
+
+
+
+   o2=[sprintf(<span class="string">'%5s %16s %25s %27s \n'</span>,<span class="string">'i'</span>,<span class="string">'x'</span>,<span class="string">'t'</span>,<span class="string">'U'</span>),o];
+
+   set(handles.editResult,<span class="string">'String'</span>,o2);
+
+
+
+
+<span class="comment">%Graph</span>
+
+  <span class="keyword">for</span> i=1 : m
+    x(i)=h*(i-1);
+  <span class="keyword">end</span>;
+
+  <span class="keyword">for</span> j=1 : n
+    t(j)=k*(j-1);
+  <span class="keyword">end</span>;
+
+
+surf(x,t,u);
+xlabel(<span class="string">'x'</span>,<span class="string">'FontSize'</span>, 15);
+ylabel(<span class="string">'t'</span>,<span class="string">'FontSize'</span>, 15);
+zlabel(<span class="string">'U'</span>,<span class="string">'FontSize'</span>, 15);
+grid <span class="string">on</span>;
+
+axes(handles.axes1);
+
+<span class="comment">% --- Executes on button press in pushbutton2.</span>
+<span class="keyword">function</span> pushbutton2_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to pushbutton2 (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+
+
+
+<span class="keyword">function</span> edit9_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to edit9 (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+
+<span class="comment">% Hints: get(hObject,'String') returns contents of edit9 as text</span>
+<span class="comment">%        str2double(get(hObject,'String')) returns contents of edit9 as a double</span>
+
+
+<span class="comment">% --- Executes during object creation, after setting all properties.</span>
+<span class="keyword">function</span> edit9_CreateFcn(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to edit9 (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    empty - handles not created until after all CreateFcns called</span>
+
+<span class="comment">% Hint: edit controls usually have a white background on Windows.</span>
+<span class="comment">%       See ISPC and COMPUTER.</span>
+<span class="keyword">if</span> ispc &amp;&amp; isequal(get(hObject,<span class="string">'BackgroundColor'</span>), get(0,<span class="string">'defaultUicontrolBackgroundColor'</span>))
+    set(hObject,<span class="string">'BackgroundColor'</span>,<span class="string">'white'</span>);
+<span class="keyword">end</span>
+
+
+<span class="comment">% --- Executes on button press in pushbutton3.</span>
+<span class="keyword">function</span> pushbutton3_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to pushbutton3 (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+line{1}=<span class="string">'Wave Equation Solver'</span>;
+line{2}=<span class="string">'Version 1.0 - build Aug 2, 2018 with Matlab'</span>;
+line{3}=<span class="string">'Created by Lukas Setiawan'</span>;
+line{4}=<span class="string">'www.metodenumeriku.blogspot.com'</span>;
+line{5}=<span class="string">'Facebook search: Metode Numerik-Plus Programnya'</span>;
+line{6}=<span class="string">'lukassetiawan@yahoo.com'</span>;
+line{7}=<span class="string">'My other works:'</span>;
+line{8}=(<span class="string">'https://bitbucket.org/nixz97/nix/downloads/'</span>);
+<span class="comment">%disp('&lt;a href="https://bitbucket.org/nixz97/nix/downloads/)"&gt;go&lt;/a&gt;');</span>
+line{9}=<span class="string">''</span>;
+line{10}=<span class="string">'Educational background :'</span>;
+line{11}=<span class="string">'1. SD IPPOR Eretan Wetan-Kandanghaur-Indramayu'</span>;
+line{12}=<span class="string">'2. SMP Negeri Kandanghaur'</span>;
+line{13}=<span class="string">'3. SMA BOPKRI I {BOSA} Yogyakarta'</span>;
+line{14}=<span class="string">'4. Teknik Kimia Angkatan 94 {NRP 6294015) Universitas Parahyangan Bandung'</span>;
+line{15}=<span class="string">'5. Teknik Informatika STMIK Indonesia Mandiri Bandung {NIM 36026084)'</span>;
+line{16}=<span class="string">''</span>;
+line{17}=<span class="string">'Accepting donations for software development.'</span>;
+msgbox(line,<span class="string">'About'</span>,<span class="string">'none'</span>);
+</pre><img vspace="5" hspace="5" src="WaveEquation_01.png" alt=""> <p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2016a</a><br></p></div><!--
+##### SOURCE BEGIN #####
+function varargout = WaveEquation(varargin)
+% WAVEEQUATION MATLAB code for WaveEquation.fig
+%      WAVEEQUATION, by itself, creates a new WAVEEQUATION or raises the existing
+%      singleton*.
+%
+%      H = WAVEEQUATION returns the handle to a new WAVEEQUATION or the handle to
+%      the existing singleton*.
+%
+%      WAVEEQUATION('CALLBACK',hObject,eventData,handles,...) calls the local
+%      function named CALLBACK in WAVEEQUATION.M with the given input arguments.
+%
+%      WAVEEQUATION('Property','Value',...) creates a new WAVEEQUATION or raises the
+%      existing singleton*.  Starting from the left, property value pairs are
+%      applied to the GUI before WaveEquation_OpeningFcn gets called.  An
+%      unrecognized property name or invalid value makes property application
+%      stop.  All inputs are passed to WaveEquation_OpeningFcn via varargin.
+%
+%      *See GUI Options on GUIDE's Tools menu.  Choose "GUI allows only one
+%      instance to run (singleton)".
+%
+% See also: GUIDE, GUIDATA, GUIHANDLES
+
+% Edit the above text to modify the response to help WaveEquation
+
+% Last Modified by GUIDE v2.5 02-Aug-2018 16:33:18
+
+% Begin initialization code - DO NOT EDIT
+gui_Singleton = 1;
+gui_State = struct('gui_Name',       mfilename, ...
+                   'gui_Singleton',  gui_Singleton, ...
+                   'gui_OpeningFcn', @WaveEquation_OpeningFcn, ...
+                   'gui_OutputFcn',  @WaveEquation_OutputFcn, ...
+                   'gui_LayoutFcn',  [] , ...
+                   'gui_Callback',   []);
+if nargin && ischar(varargin{1})
+    gui_State.gui_Callback = str2func(varargin{1});
+end
+
+if nargout
+    [varargout{1:nargout}] = gui_mainfcn(gui_State, varargin{:});
+else
+    gui_mainfcn(gui_State, varargin{:});
+end
+% End initialization code - DO NOT EDIT
+
+
+% REPLACE_WITH_DASH_DASH- Executes just before WaveEquation is made visible.
+function WaveEquation_OpeningFcn(hObject, eventdata, handles, varargin)
+% This function has no output args, see OutputFcn.
+% hObject    handle to figure
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+% varargin   command line arguments to WaveEquation (see VARARGIN)
+
+% Choose default command line output for WaveEquation
+handles.output = hObject;
+
+% Update handles structure
+guidata(hObject, handles);
+
+% UIWAIT makes WaveEquation wait for user response (see UIRESUME)
+% uiwait(handles.figure1);
+
+
+% REPLACE_WITH_DASH_DASH- Outputs from this function are returned to the command line.
+function varargout = WaveEquation_OutputFcn(hObject, eventdata, handles) 
+% varargout  cell array for returning output args (see VARARGOUT);
+% hObject    handle to figure
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Get default command line output from handles structure
+varargout{1} = handles.output;
+
+
+
+function editF_Callback(hObject, eventdata, handles)
+% hObject    handle to editF (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of editF as text
+%        str2double(get(hObject,'String')) returns contents of editF as a double
+
+
+% REPLACE_WITH_DASH_DASH- Executes during object creation, after setting all properties.
+function editF_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to editF (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+
+function editG_Callback(hObject, eventdata, handles)
+% hObject    handle to editG (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of editG as text
+%        str2double(get(hObject,'String')) returns contents of editG as a double
+
+
+% REPLACE_WITH_DASH_DASH- Executes during object creation, after setting all properties.
+function editG_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to editG (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+
+function edita_Callback(hObject, eventdata, handles)
+% hObject    handle to edita (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of edita as text
+%        str2double(get(hObject,'String')) returns contents of edita as a double
+
+
+% REPLACE_WITH_DASH_DASH- Executes during object creation, after setting all properties.
+function edita_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to edita (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+
+function editb_Callback(hObject, eventdata, handles)
+% hObject    handle to editb (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of editb as text
+%        str2double(get(hObject,'String')) returns contents of editb as a double
+
+
+% REPLACE_WITH_DASH_DASH- Executes during object creation, after setting all properties.
+function editb_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to editb (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+
+function editc_Callback(hObject, eventdata, handles)
+% hObject    handle to editc (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of editc as text
+%        str2double(get(hObject,'String')) returns contents of editc as a double
+
+
+% REPLACE_WITH_DASH_DASH- Executes during object creation, after setting all properties.
+function editc_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to editc (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+
+function editm_Callback(hObject, eventdata, handles)
+% hObject    handle to editm (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of editm as text
+%        str2double(get(hObject,'String')) returns contents of editm as a double
+
+
+% REPLACE_WITH_DASH_DASH- Executes during object creation, after setting all properties.
+function editm_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to editm (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+
+function editn_Callback(hObject, eventdata, handles)
+% hObject    handle to editn (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of editn as text
+%        str2double(get(hObject,'String')) returns contents of editn as a double
+
+
+% REPLACE_WITH_DASH_DASH- Executes during object creation, after setting all properties.
+function editn_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to editn (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+
+function editResult_Callback(hObject, eventdata, handles)
+% hObject    handle to editResult (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of editResult as text
+%        str2double(get(hObject,'String')) returns contents of editResult as a double
+
+
+% REPLACE_WITH_DASH_DASH- Executes during object creation, after setting all properties.
+function editResult_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to editResult (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in Runbutton.
+function Runbutton_Callback(hObject, eventdata, handles)
+% hObject    handle to Runbutton (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Wave Equation Solver by Lukas Setiawan (e-mail: lukassetiawan@yahoo.com)
+
+clc
+
+a=str2double(get(handles.edita,'String'));
+b=str2double(get(handles.editb,'String'));
+c=str2double(get(handles.editc,'String'));
+m=str2double(get(handles.editm,'String'));
+n=str2double(get(handles.editn,'String'));
+
+if (m~=n)
+  msgbox('Dimension of the grid (m & n) must be the same !!!')
+  stop;
+end
+
+ h=a/(n-1);
+ k=b/(m-1);
+ r=(c*k)/h;
+ r2=r*r;
+ r22=(r*r)/2;
+ s1=1-(r*r);
+ s2=2-(2*r*r);
+
+ F=get(handles.editF,'String');
+ Fx=str2func(['@(x)' F]);
+ G=get(handles.editG,'String');
+ Gx=str2func(['@(x)' G]);
+ 
+ F3=zeros(m); % to initialize array 
+ G3=zeros(n);  
+ 
+ for i=2:n-1
+  x=h*(i-1);
+  F3(i)=Fx(x);
+  G3(i)=Gx(x);
+ end;
+ 
+ for j=1:m
+   u(1,j)=0;
+   u(n,j)=0;
+ end;
+
+ for i=2:n-1
+   u(i,1)=F3(i);
+   u(i,2)=s1*F3(i)+k*G3(i)+r22*(F3(i+1)+F3(i-1));
+ end;
+
+ for j=3:m
+  for i=2 :n-1
+    u(i,j)=s2*u(i,j-1)+r2*(u(i-1,j-1)+u(i+1,j-1))-u(i,j-2);
+  end;
+ end;
+ 
+   
+   o='';
+   p=0;
+   for j=1 : n
+    for i=1 : m
+       p=p+1;
+       x=h*(i-1);
+       t=k*(j-1);
+       o=[o sprintf('%i %20f %20f %25e \n',p,x,t,u(i,j))];
+    end;
+   end;
+   
+  
+   
+   o2=[sprintf('%5s %16s %25s %27s \n','i','x','t','U'),o];
+   
+   set(handles.editResult,'String',o2);
+           
+
+           
+  
+%Graph
+ 
+  for i=1 : m
+    x(i)=h*(i-1);
+  end;
+  
+  for j=1 : n
+    t(j)=k*(j-1);
+  end;
+ 
+
+surf(x,t,u);
+xlabel('x','FontSize', 15);
+ylabel('t','FontSize', 15);
+zlabel('U','FontSize', 15); 
+grid on;
+     
+axes(handles.axes1);
+           
+% REPLACE_WITH_DASH_DASH- Executes on button press in pushbutton2.
+function pushbutton2_Callback(hObject, eventdata, handles)
+% hObject    handle to pushbutton2 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+
+function edit9_Callback(hObject, eventdata, handles)
+% hObject    handle to edit9 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of edit9 as text
+%        str2double(get(hObject,'String')) returns contents of edit9 as a double
+
+
+% REPLACE_WITH_DASH_DASH- Executes during object creation, after setting all properties.
+function edit9_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to edit9 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in pushbutton3.
+function pushbutton3_Callback(hObject, eventdata, handles)
+% hObject    handle to pushbutton3 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+line{1}='Wave Equation Solver';
+line{2}='Version 1.0 - build Aug 2, 2018 with Matlab';
+line{3}='Created by Lukas Setiawan';
+line{4}='www.metodenumeriku.blogspot.com';
+line{5}='Facebook search: Metode Numerik-Plus Programnya';
+line{6}='lukassetiawan@yahoo.com';
+line{7}='My other works:';
+line{8}=('https://bitbucket.org/nixz97/nix/downloads/');
+%disp('<a href="https://bitbucket.org/nixz97/nix/downloads/)">go</a>');
+line{9}='';
+line{10}='Educational background :';
+line{11}='1. SD IPPOR Eretan Wetan-Kandanghaur-Indramayu';
+line{12}='2. SMP Negeri Kandanghaur';
+line{13}='3. SMA BOPKRI I {BOSA} Yogyakarta';
+line{14}='4. Teknik Kimia Angkatan 94 {NRP 6294015) Universitas Parahyangan Bandung';
+line{15}='5. Teknik Informatika STMIK Indonesia Mandiri Bandung {NIM 36026084)';
+line{16}='';
+line{17}='Accepting donations for software development.';
+msgbox(line,'About','none');
+
+##### SOURCE END #####
+--></body></html>
