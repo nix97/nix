@@ -61,6 +61,17 @@ It's about cryptography using Advance Encryption Standard(AES).
 Key size 128, 192, 256 bits This part use library System.Security.Cryptography.
 App in GUI.
 
+13. ODEs Solver
+FIRST-ORDER ODE(IVP)
+
+First-Order Ordinary Differential Equation (ivp) using 
+Runge-Kutta 4th Order(RK4) method.
+
+To approximate the solution of the initial value problem
+(ivp) y ' =f(x,y) with y(a)=yo over [a,b] and 
+subinterval M.
+
+
 
     
 Another works(Math stuff ,app and sourcecode on   https://bitbucket.org/nixz97/nix/downloads/)
