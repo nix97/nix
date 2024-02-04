@@ -45,6 +45,13 @@ and Singular Value Decomposition(SVD).
 To solving initial value problem (ivp) second-order Ordinary Differential Equation(ODE) 
 using Runge-Kutta-Fehlberg formula (RKF45).
 
+10. Eigenpairs Fullset
+Jacobi Iteration for Eigenvalues and Eigenvectors
+To compute the full set of Eigenpairs ( Eigenvalues λ
+and Eigenvector V ) of the Real symmentrical matrix A. 
+
+Eigenproblem is   A V = λ V 
+
     
 Another works(Math stuff ,app and sourcecode on   https://bitbucket.org/nixz97/nix/downloads/)
 
