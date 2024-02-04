@@ -1,0 +1,247 @@
+unit UnODEs;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ComCtrls,
+  VclTee.TeeGDIPlus, VCLTee.TeEngine, Vcl.ExtCtrls, VCLTee.TeeProcs,
+  VCLTee.Chart, bcParser, VCLTee.Series,math;
+
+type
+  TFormODEs = class(TForm)
+    PageControl1: TPageControl;
+    TabSheet1: TTabSheet;
+    TabSheet2: TTabSheet;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    EditF: TEdit;
+    EditA: TEdit;
+    Label4: TLabel;
+    Label5: TLabel;
+    EditB: TEdit;
+    Label7: TLabel;
+    EditY0: TEdit;
+    Label6: TLabel;
+    Label8: TLabel;
+    EditM: TEdit;
+    Label9: TLabel;
+    cbExact: TCheckBox;
+    ButRun: TButton;
+    ButClear: TButton;
+    MemResult: TMemo;
+    Label10: TLabel;
+    Label11: TLabel;
+    Label12: TLabel;
+    ButAbout: TButton;
+    Chart1: TChart;
+    bcParser1: TbcParser;
+    Series1: TPointSeries;
+    EditExact: TEdit;
+    Series2: TLineSeries;
+    Label14: TLabel;
+    Memo1: TMemo;
+    Label13: TLabel;
+    procedure ButAboutClick(Sender: TObject);
+    procedure ButRunClick(Sender: TObject);
+    procedure ButClearClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormODEs: TFormODEs;
+
+implementation
+
+//uses bcParser;
+
+{$R *.dfm}
+
+procedure TFormODEs.ButAboutClick(Sender: TObject);
+const
+ sAbout = '|======== ODEs Solver ========|' + #13#10 + #13#10 +
+          '(Ordinary Differential Equations Solver)' + #13#10 + #13#10 +
+          'Version 1.0 - build apr 1, 2023.'+ #13#10+
+          'Created by Lukas Setiawan.' + #13#10 +
+          'Copyright (c) 2023. All Rights Reserved.' + #13#10 +
+          '' + #13#10 +
+          'Visit www.metodenumeriku.blogspot.com' + #13#10 +
+          'FB search: Metode Numerik-Plus Programnya' + #13#10+
+          'e-mail: lukassetiawan@yahoo.com' + #13#10+#13#10+
+          'My other works:' + #13#10+
+          'https://bitbucket.org/nixz97/nix/downloads/'+ #13#10+#13#10+
+          'Accept donations for software development.';
+begin
+ MessageDlg( sAbout, mtInformation, [mbOK], 0);
+end;
+
+procedure TFormODEs.ButClearClick(Sender: TObject);
+begin
+  EditF.Clear;
+  EditExact.Clear;
+  EditA.Clear;
+  EditB.Clear;
+  EditY0.Clear;
+  EditM.Clear;
+  cbExact.Checked:=false;
+  MemResult.Clear;
+  Chart1.ClearChart;
+end;
+
+procedure TFormODEs.ButRunClick(Sender: TObject);
+label zz;
+var
+ i,j,M,M2:longint;
+ Xi : array[0..10000] of extended;
+ Yi : array[0..10000] of extended; //RK4
+ a,b,X,h,h2,Y,K1,K2,K3,K4,smooth : extended;  //Ki=slope
+ Yexact : array[0..10000] of extended; //exact/Analisis Y
+ Yerror : array[0..10000] of extended; //% in relative error
+ Xsmooth : array[0..10000] of extended; //exact/Analisis X; smooth display only
+ Ysmooth : array[0..10000] of extended; //exact/Analisis Y
+
+ s : string ; //plot (Xi,Yi)
+
+ begin
+ try
+  a:=strtofloat(EditA.Text);
+  b:=strtofloat(EditB.Text);
+  Yi[0]:=strtofloat(EditY0.Text);
+  M:=strtoint(EditM.Text);
+
+  if (M>10000) then
+  begin
+   showmessage('Max M is 10000 !!!');
+   goto zz;
+  end;
+
+  h:=(b-a)/M;
+  Xi[0]:=a;
+
+  bcParser1.Expression:=editF.Text;
+ // x2:=strtofloat(editX.Text);
+  //y2:=strtofloat(editY.Text);
+
+  for j:=0 to M-1 do
+  begin
+   X:=Xi[j];
+   Y:=Yi[j];
+
+   //K1
+   bcParser1.createVar('x',X);
+   bcParser1.createVar('y',Y);
+   K1:=bcParser1.Evaluate;
+
+   //K2
+   bcParser1.createVar('x',X+0.5*h);
+   bcParser1.createVar('y',Y+0.5*h*K1);
+   K2:=bcParser1.Evaluate;
+
+   //K3
+   bcParser1.createVar('x',X+0.5*h);
+   bcParser1.createVar('y',Y+0.5*h*K2);
+   K3:=bcParser1.Evaluate;
+
+  //K4
+   bcParser1.createVar('x',X+h);
+   bcParser1.createVar('y',Y+h*K3);
+   K4:=bcParser1.Evaluate;
+
+   Yi[j+1]:=Y+h*(K1+2*K2+2*K3+K4)/6;
+   Xi[j+1]:=A+h*(j+1);
+
+  end;
+
+
+
+   //Analisis Y
+  a:=strtofloat(EditA.Text);
+  if cbExact.Checked=true then
+  begin
+   bcParser1.Expression:=EditExact.Text;
+   for j:=0 to M do
+   begin
+    bcParser1.createVar('x',a);
+    Yexact[j]:=bcParser1.Evaluate;
+    a:=a+h;
+   end;
+ end;
+
+ //Yerror[j] : relative error in percentage (%)
+  if cbExact.Checked=true then
+  begin
+   for j:=1 to M do
+    Yerror[j]:=abs((Yexact[j]-Yi[j])/Yexact[j])*100;
+  end;
+
+  Yerror[0]:=0;  //at initial  RK4=Exact
+
+  //Result
+ // Result Y  for RK4 & Exact
+
+ if (cbExact.Checked=true) then
+ begin
+  MemResult.lines.clear;
+  MemResult.Lines.add(' k                 Xk                                RK4  Yk               '+'                       Exact Yk'+'                                   Relative error (%)');
+  MemResult.Lines.add('________________________________________________________________________________________________');
+  MemResult.Lines.add('');
+
+  for j:=0 to M do
+   MemResult.Lines.add(inttostr(j) +format(' %19.6f',[Xi[j]])+format(' %33.18f',[Yi[j]])+format(' %33.18f',[Yexact[j]])+format(' %33.18f',[YError[j]]));
+ end
+ else
+ begin
+
+  MemResult.lines.clear;
+  MemResult.Lines.add(' k                      Xk                                      RK4 Yk               ');
+  MemResult.Lines.add('____________________________________________________');
+  MemResult.Lines.add('');
+
+  for j:=0 to M do
+   MemResult.Lines.add(inttostr(j) +format(' %24.6f',[Xi[j]])+format(' %38.18f',[Yi[j]]));
+
+ end;
+
+
+
+ //Display Graph
+ Chart1.Series[0].Clear;
+ Chart1.Series[1].Clear;
+
+ //Graph Numeric RK4
+   for j:=0 to M do
+     Chart1.Series[0].AddXY(Xi[j],Yi[j]);     //Numeric RK4
+
+  //Graph Exact smooth
+   a:=strtofloat(EditA.Text); //reset value a
+   h2:=h/4;  //for smoothness reason division by any number(this use 4)
+   M2:=4*M;
+   Xsmooth[0]:=a;
+   Ysmooth[0]:=Yi[0];
+
+   if cbExact.Checked=true then
+   begin
+    bcParser1.Expression:=EditExact.Text;
+   for j:=0 to M2 do
+   begin
+    Xsmooth[j]:=a;
+    bcParser1.createVar('x',Xsmooth[j]);
+    Ysmooth[j]:=bcParser1.Evaluate;
+    a:=a+h2;
+    Chart1.Series[1].AddXY(Xsmooth[j],Ysmooth[j]);     //Exact smooth graph
+
+   end;
+ end;
+
+
+ zz:  //end process(jump to this part with goto)
+ except
+  showmessage('Something wrong with input !!!');
+ end;
+end;
+
+end.

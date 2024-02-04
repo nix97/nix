@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2023/03/29 22:35:15.000.480,=E:\234\Data 2012\Delphi\Unit1.pas</Transaction>
+    <Transaction>2023/03/31 16:03:28.000.808,=E:\234\Data 2012\Delphi\Unit1.pas</Transaction>
+    <Transaction>2023/03/31 16:11:35.000.859,E:\234\Data 2012\Delphi\Unit1.pas=E:\234\Data 2012\Delphi\Lat mix\ODEsSolver\UnODEs.pas</Transaction>
+    <Transaction>2023/03/31 16:11:35.000.859,E:\234\Data 2012\Delphi\Unit1.dfm=E:\234\Data 2012\Delphi\Lat mix\ODEsSolver\UnODEs.dfm</Transaction>
+    <Transaction>2023/03/31 16:11:50.000.908,E:\234\Data 2012\Delphi\Project1.dproj=E:\234\Data 2012\Delphi\Lat mix\ODEsSolver\ProODEs.dproj</Transaction>
+    <Transaction>2023/03/31 17:15:32.000.715,=E:\234\Data 2012\Delphi\Lat mix\ODEsSolver\bcParser.pas</Transaction>
+  </Transactions>
+</BorlandProject>

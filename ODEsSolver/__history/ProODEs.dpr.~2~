@@ -1,0 +1,15 @@
+program ProODEs;
+
+uses
+  Vcl.Forms,
+  UnODEs in 'UnODEs.pas' {Form1},
+  bcParser in 'bcParser.pas';
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TForm1, Form1);
+  Application.Run;
+end.
