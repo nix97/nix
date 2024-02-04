@@ -1,4 +1,4 @@
-Subject of various math problems on Numerical methods :
+Subject of various math problems, mostly solve using Numerical methods :
 
 1. Partial Differential Equations(PDEs)
 >>app PDEs Solver
@@ -7,7 +7,7 @@ The coverage of this problem are:
 -Wave equation using Finite-Difference method
 -Heat equation using Forward-Difference method
 -Laplace's equation Dirichlet method
--Poisson's equation using Finite-Difference     method
+-Poisson's equation using Finite-Difference method
 
 2. System of Ordinary Differential Equation using Runge-Kutta fourth-order formula(RK4)
 >>app ODE System Solver
@@ -55,6 +55,11 @@ Eigenproblem is   A V = λ V
 11. Gauss Jordan for solving Systems of Linear Equations
 This app for solving Systems of Linear Equations 
 (AX=B) using Gauss Jordan method.
+
+12. AES 
+It's about cryptography using Advance Encryption Standard(AES).
+Key size 128, 192, 256 bits This part use library System.Security.Cryptography.
+App in GUI.
 
 
     
