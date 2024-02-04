@@ -1,0 +1,919 @@
+<body>
+
+
+<p><b><font size=4 color='navy'>ArtFormula v3.4 for Delphi and Lazarus</font></b>
+
+
+<hr size=2 width="100%" noshade style='color:blue' align=center>
+
+
+<p><b>ArtFormula package</b> contains
+two nonvisual Delphi component for symbolic expression parsing and evaluation.
+Provides runtime scripting engine for automating your programs. 
+Also <b>ArtFormula</b> can symbolically evaluate derivatives of a function with basic simplification of a result.
+
+<p><b><font size=4 color='navy'>TArtFormula description</font></b>
+
+<p><b><font size=4>Properties:</b></font>
+
+<p><b>property</b> Error :
+TFormulaError; - returns current error code. 
+
+<p>TFormulaError = (ER_Ok, ER_ILLEGAL, ER_UNKNOWN, ER_RIGHT,
+ER_LEFT, ER_SYNTAX, ER_VARS, ER_NOTENOUGH); 
+
+<p><b>property</b> ErrPos : integer; -
+returns position of error. 
+
+<p><b>property</b> ErrLine : integer;
+- returns the line with error. 
+
+<p><b>property</b> ErrStrPos :
+integer; - returns the position of error inside source string. 
+
+<p><b>property</b> Stop : boolean; -
+set Stop to true during computation to stop. 
+
+<p><b>property</b> Compiled : string;
+- bytecode of compiled source string. 
+
+<p><b>property</b> LocalStrings : TStrings; - if TArtFormula compiled with multilang support (see below), this property contains list of pairs "StringName=LocalValue". You can use Names and Values properties of LocalStings to obtain string names and local values.
+
+<p><b>property</b> ModuleName : string; - contains name of last called user module. 
+
+<p><b>property</b> FunctionName : string; - contains name of last called function. Useful for user defined modules and functions. By testing FunctionName value user function can recognize its name (along with module name by testing ModuleName property). 
+
+<p><b>property</b> ParamCount : integer; - contains parameters count of last called function (-1 for variable argument list function).
+
+<p><b>property</b> SubFormula : TArtSFArray; - Set of compiled subroutines podused by CompileProgram procedure. 
+
+<p><b>property</b> Global : TArtSubFormula; - Global scope of ArtFormula program (for debugging issues mostly). 
+
+<p><b>property</b> SubRoutine : PArtSubFormula; - Pointer to current subroutine of ArtFormula program (for debugging issues mostly). 
+
+<p><b><font size=4>Published properties:</font></b>
+
+<p><b>property</b> AutoCreateVars :
+boolean; - if true, ArtFormula will create new variable with the first assignment statement. But if unknown variable is in the expression, ArtFormula will rise an expression.
+
+
+<p><b>property</b> UnQuotedString :
+boolean; - if true, ArtFormula will consider unknown identifiers as string
+literals. 
+
+<p><b>property</b> TestUsedVars :
+boolean; - if true, ArtFormula will test whether all external variables, passed
+as vars parameter of Compile or Test procedure, are used in source expression. 
+
+<p><b>property</b> CaseSensitive :
+boolean; - if true, ArtFormula will distinguish case of characters in variables
+name. Note: functions names are always case insensitive. 
+
+<p><b>property</b> Step : boolean; -
+if true, you can stop computation, by setting Stop property to true. If false
+you can't stop computation until it ends. 
+
+<p><b>property</b> StoreLines : boolean; - if true, ArtFormula will store line number in 
+compiled bytecode, so ErrLine will contain runtime error line number.
+
+<p><b>Note:</b> Step, StoreLines and OnStep properties usefull for debugging issues 
+(see demo).
+
+<p><b>property</b> CaseSensitiveString
+: boolean; - if true, ArtFormula will distinguish case of string characters in
+comparison operations and in pos function. 
+
+<p><b>property</b> ExternGetVar :
+boolean; - if set, ArtFormula will use GetVarValue and GetVarsCount events to
+evaluate unspecified external variables. 
+
+<p><b>property</b> VarNameLiterals :
+string; - defines set of literals, allowed for variable names. 
+
+<p><b>property</b> NoLeadingZero : boolean; - if true, you can omit leading zero before point in 
+floating point numbers (both .5 and 0.5 correct), if false - only notation with leading zero accepted 
+(only 0.5, .5 - causes error).
+
+<p><b>property</b> ZeroEmptyString : boolean; - if true, ArtFormula will treat empty string as 0 in arithmetic operations.
+
+<p><b><font size=4>Methods:</font></b>
+
+<p><b>procedure</b> SetVar(name :
+string; value : PCalcItem); - sets value of variable, given by name parameter. 
+
+<p><b>function</b> GetVar(name :
+string) : PCalcItem; - returns value of variable. 
+
+<p><b>function</b> IncVar(name :
+string) : PCalcItem; - increments value of a variable. 
+
+<p><b>function</b> DecVar(name :
+string) : PCalcItem; - decrements value of a variable. 
+
+<p><b>procedure</b> AddVar(name : string;
+value : PCalcItem); - adds internal variable. 
+
+<p><b>procedure</b>
+AddUserConstant(name, value : string); - adds new constant. 
+
+<p><b>function</b>
+AddUserFunction(name : string; paramcount:integer; 
+fun : pformulafunction; defval : PDefArray = nil; 
+ismodule:boolean=false;replace:boolean=false):PTableItem; - adds user function (see Section creating
+user functions and modules). 
+
+<p><b>function</b>
+AddModuleFunction(module: PTableItem; name : string; paramcount:integer; fun :
+pformulafunction; ismodule:boolean=false;replace:boolean=false):PTableItem; - adds module function
+(see Section creating user functions and modules). 
+
+<p><b>function</b> Test(instr :
+string; num : integer = 0; vars : PStringArray = nil) : boolean; - tests syntax of
+source code represented by instr. External variable names are passed as vars
+parameter, num specifies number of external variables. Returns true if there
+are no errors. 
+
+<p><b>function</b> Compile(instr :
+string; num : integer = 0; vars : PStringArray = nil) : string; - compiles source
+string and returns compiled bytecode. On error raises exception. 
+
+<p><b>function</b> ComputeN(num : integer
+= 0; vals : PCalcArray = nil) : double; - compute previously compiled program
+and returns result as numeric value. Values of extern variables are passed in
+vals parameter, the number of values is passed in num value. 
+
+<p><b>function</b> Compute(num : integer
+= 0; vals : PCalcArray = nil) : string; - compute previously compiled program
+and returns result as string value. 
+
+<p><b>function</b> ComputeStrN(instr :
+string; num : integer = 0; vars : PStringArray = nil; vals : PCalcArray = nil) :
+double; - compiles and computes source string. Returns result as numeric value.
+
+
+<p><b>function</b> ComputeStr(instr :
+string; num : integer = 0; vars : PStringArray = nil; vals : PCalcArray = nil) :
+string; - compiles and computes source string. Returns result as string value. 
+
+<p><b>procedure</b> StartGetVars(n :
+integer); - starts new parameters evaluation for variable argument list
+function (see Section creating user functions and modules). 
+
+<p><b>function</b> GetNextVar(var x :
+TCalcItem) : boolean; - evaluates next variable argument list function parameter.
+Returns false for last value (see Section creating user functions and modules).
+
+<p><b>function</b> GetLocalString(name : string; defvalue : string) : string; - if TArtFormula compiled with multilang support, this function returns local value from current loaded language for string <i>name</i> and if string not set or empty it returns <i>defvalue</i>.
+
+<p><b>procedure</b> LoadLang(lngfile : string); - if TArtFormula compiled with multilang support, this procedure load local strings from <i>lngfile</i>.
+
+<p><b>procedure</b> SetLocalString(name : string; value : string); - if TArtFormula compiled with multilang support, this procedure can be used to change error strings in runtime.
+
+<p><b>procedure</b> CompileProgram(instr : string); - Compile source text as the set of subroutines with global vars and constants definition.
+<p><b>function</b> RunSub(name : string;vals : PCalcArray = nil) : string; - Run subroutine by name with optional argument list;
+<p><b> function</b> RunSub(idx:integer; vals : PCalcArray = nil) : string; - Run subroutine by index with optional argument list; 
+
+<p><b><font size=4>Events:</font></b>
+
+<p><b>property</b> GetVarsCount :
+TArtFormulaGetVarsCountProc;<br>
+TArtFormulaGetVarsCountProc = <b>procedure</b>(Vname:string; var count:integer;
+wantnumber:boolean=false) of object;<br>
+If you set <b>ExternGetVars</b> all unknown identifiers will treated as
+external variables. To evaluate them you should implement <b>GetVarsCount</b>
+and <b>GetVarValue</b> event handlers. <b>GetVarsCount</b> should return in <b>count</b>
+parameter number of values associated with <b>Vname</b> variable. Value of <b>wantnumber</b>
+specifies whether <b>ArtFormula</b> expects numerical values. <b>GetVarsCount</b> is called by
+<b>ArtFormula</b> when you pass external variable as a parameter of variant argument list function.
+
+<p><b>property</b> GetVarValue :
+TArtFormulaGetVarProc;<br>
+TArtFormulaGetVarProc = <b>procedure</b>(Vname:string; n : integer; var
+Val:string; wantnumber:boolean=false) of object;<br>
+<b>GetVarValue</b> should return in <b>Val</b> parameter <b>n</b>-th value
+associated with <b>Vname</b> variable. <b>n</b> will change from 0 to <b>count</b>-1
+where <b>count</b> returned by <b>GetVarsCount</b> event. Value of <b>wantnumber</b>
+specifies whether <b>ArtFormula</b> expects numerical values. 
+
+<p><b>Note.</b> Using <b>GetVarsCount</b>
+and <b>GetVarValue</b> you can implement for example range calculation in
+spreadsheet application when one parameter is passed in variant argument list
+function associated with number of cells. 
+
+<p><b>Note.</b> For fixed argument
+list function and when external variables are used as operands of expression, 
+<b>ArtFormula</b> don't calls <b>GetVarsCount</b> and evaluates only first value associated with variable. 
+
+
+<p><b>property</b> OnStep : TArtFormulaStepProc<br>
+TArtFormulaStepProc =  <b>procedure</b>(AF:TArtFormula) of object;<br>
+Write <b>OnStep</b> event handler to debug your ArtFormula program (see demo).
+
+<p><b>property</b> OnLoadLang : TArtFormulaLoadLangProc;<br>
+TArtFormulaLoadLangProc =  <b>procedure</b> of object;<br>
+If TArtFormula compiled with multilang support, this event arises when new local 
+strings loaded from lng file. You can use this event to change local strings for 
+installed TArtFormula modules or user functions.
+
+
+<hr size=2 width="100%" align=center>
+
+
+<p><b><font size=4 color='navy'>How to use</font></b>
+
+<p>Write ArtFormula program (see Section ArtFormula Syntax).
+Prepare string array with external variable names. 
+
+<p><b>Note.</b> If you set <b>ExternGetVars</b>
+all unknown identifiers will treated as external variables. To evaluate them
+you should implement <b>GetVarsCount</b> and <b>GetVarValue</b> event handlers.
+
+
+<p>Prepare TCalcArray with variable values. Use <b>setN</b>
+and <b>setS</b> procedures. 
+
+<p>TFormulaDataType = (fdtnumber, fdtstring, fdtgetvar); <br>
+<br>
+TCalcItem = record <br>
+data : double; <br>
+str : string; <br>
+typ : TFormulaDataType; <br>
+end; <br>
+<br>
+TCalcArray = array of TCalcItem; <br>
+PCalcArray = ^TCalcArray; 
+
+<p>Use <b>AddUserConstant</b>, <b>AddUserFunction</b> and <b>AddModuleFunction</b>
+procedures to add constants, user and module functions. 
+
+<p>Call <b>Test</b> and/or <b>Compile</b> procedures passing
+source code as <b>instr</b> parameter, number of external variables in <b>num</b>
+parameter and pointer to array of variable names in <b>vars</b> parameter. If
+there no errors, call <b>Compute</b> or <b>ComputeN</b> (depending on desirable
+result type) procedure, passing number of values in <b>num</b> parameter and
+pointer to variable values in <b>vals</b> parameter. 
+
+<p>To compile and compute expression by one call use <b>ComputeStrN</b>
+or <b>ComputeStr</b> procedures. 
+
+<p>See <i>File module</i> (af_file.pas in <i>demo</i> folder)
+as example of module developing. 
+
+<p>With <b>CompileProgram</b> you can compile source code as the set of subroutines. Use <b>RunSub</b> to call one of precompiled subroutines then. 
+
+<hr size=2 width="100%" align=center>
+<p><b><font size=4 color='navy'>Multilang support</font></b>
+<p>If ArtFormula compiled with <b>{$define AF_MULTILANG}</b> directive it can use localization lng files to localize TAtFormula messages and error strings. 
+
+<p>Lng file is any ini file with <b>[ArtFormula]</b> section, contained pairs of <i>StringName = LocalValue</i>. You can find predefined StringNames in demo lng files inside Demo\Lang folder. 
+
+<p>To load another lng file call <b>LoadLang</b> procedure passing lng file name as a parameter. Then you can use <b>LocalStrings</b> property and <b>GetLocalString</b> function to obtain local string values. 
+<p>Also you can define your own StringNames in lng file to use them with user defined functions and modules. In this case you should write <b>OnLoadLang</b> even handler to change your local string values when new lng file has loaded.
+
+
+<hr size=2 width="100%" align=center>
+
+
+<p><b><font size=4 color='navy'>Creating user functions and modules</font></b>
+
+<p><b>TArtFormula</b> has <b>AddUserFunction</b>
+and <b>AddModuleFunction</b> procedures allow you to add user defined functions
+and modules. <b>AddUserFunction</b> takes from three to six parameters: function
+name, number of parameters, pointer to corresponded Delphi function, default argument values, flag
+whether function is main function of new module and flag allowing one to replace an existing function at runtime. 
+
+<p>First you should write Delphi function of next type: 
+
+<p>function MyFunction(var Calc : TFormulaCalc):TCalcItem; 
+
+<p>This function should return result of <b>TCalcItem</b>
+type. If function returns string value, set <b>str</b> member of Result
+variable and set <b>typ</b> member to <b>fdtstring</b> else set <b>data</b>
+member and <b>typ</b> to <b>fdtnumber</b>. Use <b>setN</b> and <b>setS</b>
+procedures to do it. 
+
+<p>Function takes one parameter of <b>TFormulaCalc</b> type. <b>TFormulaCalc</b>
+is stack object used to implement arithmetical and logical calculation. It has
+many methods and properties but most useful are: 
+
+<p><b>function</b> TopN: double; -
+returns top value as number. 
+
+<p><b>function</b> TopS: String; -
+returns top value as string. 
+
+<p><b>function</b>
+ItemN(i:integer):double; - returns stack item value as number. ItemN(0) - top
+element, Item(1) - next and so on. 
+
+<p><b>function</b> ItemS(i:integer):string;
+- returns stack item value as string. 
+
+<p><b>function</b>
+Item(i:integer):PCalcItem; - returns pointer to stack item. 
+
+<p><b>property</b> Parent :
+TArtFormula; - pointer to parent ArtFormula object. 
+
+<p>You should understand, that parameters for function are
+passed in stack. So last function parameter is the top (Item(0)) item in stack.
+For example if function has three parameters first parameter will be ItemN(2)
+or ItemS(2), second - ItemN(1) or ItemS(1), third - ItemN(0) or ItemS(0) (TopN
+or TopS). 
+
+<p>If you want to create variable argument list functions, you
+should pass -1 as <b>paramcount</b> to <b>AddUserFunction</b>. For such
+functions ArtFormula pass the number of parameters as last argument (top in
+Calc stack). Variable argument list functions can take external variables evaluated
+via <b>GetVarValue</b> and <b>GetVarsCount events</b> (if <b>ExternGetVar</b>
+is true). Such external variables can return more than one value. It useful
+e.g. for spreadsheet application when function parameter can be the range of
+spreadsheet cells. Such external variables pass as one parameter in Calc stack
+of <b>fdtgetvar</b> type. <b>StartGetVars</b> and <b>GetNextVar</b> methods
+help you to deal with such parameters. Fist you should determine number of
+arguments passed via stack (call TopN), then pass this value into <b>StartGetVars</b>
+to begin evaluation of real parameters and then call <b>GetNextVar</b> until it
+return false. See implementation of min, max, sum and other function to
+understand this technique.
+
+<p>If it needed you can define default function values, passed them in <b>devfal</b> parameter of
+<b>PDefArray</b> type. <b>PDefArray</b> is a pointer to array of <b>TCalcItem</b>. You should prepare such array and 
+pass pointer as <b>devfal</b> parameter. The size of array should be equal to the count of function parameters.
+For parameters with default values you should set <b>typ</b> member of corresponded array element to 
+<b>fdtnumber</b> or <b>fdtstring</b> value and set <b>data</b> or <b>str</b> to default value. If there is no 
+default value for function parameter <b>typ</b> member of corresponded array element should be set to <b>fdtgetvar</b>.
+To call function with default value in ArtFormula program you can just omit any value before comma (if this parameter is the last one you can also omit comma), e.g.
+<ul><li><i>formatdate(,now())</i> - use default value &quot;c&quot; as the first parameter.
+<li><li><i>msg(&quot;Message&quot;,&quot;Caption&quot;)</i> - use default value for last parameter.
+<li><li><i>input(,'Input something:',)</i> - use default value for first and last parameters.
+</ul>
+
+<p>TArtFormula has special type of function called module.
+Module can have its own functions. Module can be considered as functions
+library or as object with methods and properties. 
+
+<p>To create module, call <b>AddUserFunction</b> setting
+module parameter to true. It creates main function of module. <b>AddUserFunction</b>
+returns pointer to new allocated function table item which should be passed as
+first argument of <b>AddModuleFunction</b> when you add function to the module.
+The name of function passed to <b>AddUserFunction</b> becomes the name of the
+module. You can call main function of module in ArtFormula program as usual
+function. The call of other module function should be preceded by module name
+and period (.). If you pass arguments to main function of module, ArtFormula
+first calls main function. For example: <br>
+<i>module('x').fun('y')</i> - calls main function with argument <i>'x'</i> and
+then function <i>fun</i> with argument <i>'y'</i>; <br>
+<i>module.fun('y')</i> - calls only function <i>fun</i> with argument <i>'y'</i>.
+
+
+<p>The result of main function of module is passed as
+additional (first) argument of other module function. This feature allows one
+to use modules as objects. The common way to do so is to create internal table
+of objects, write module function which creates new entry in table and returns
+index. Main module function takes one parameter - index of object in internal
+table and simply returns it. This index is passed as first parameter to other
+module functions, so it is known with which object deal with.
+
+<p>For example: 
+
+<p><i>$f := file.new; // creates new file object <br>
+file($f).name := 'info'; <br>
+file($f).open('read'); </i>
+
+<p>ArtFunction module can't have data members but you can
+easily create properties. To create property with name <i>SomeName</i> you
+should write two functions. First one with name <i>SomeName</i> without
+parameters to return property value and second one with name <i>SetSomeName</i>
+with one parameter to set property value. So when ArtFormula meets statement <i>module.SomeName
+:= Val</i> it automatically compiles it as <i>module.SetSomeName(Val)</i>. 
+
+<p>You can easily write callback functions for your modules. For more information see Demo program. 
+
+<hr size=2 width="100%" align=center>
+
+
+<p><b><font size=4 color='navy'>ArtFormula Syntax</font></b>
+
+<p><b><font size=4>Preamble</font></b>
+
+<p>ArtFormula has no statements in common meaning. All program
+structure elements (branching, loops) are realized as function calls. So every
+statement has parameters and result value. For example pascal block statement (<i>begin
+... end</i>) is realized as <i>block(...)</i> function, if statement is call of
+<i>condition()</i> function. TArtFormula component has predefined constant so
+you can use pascal like notation instead of function calls. Also you can use
+semicolon instead of comma. Below we will show both (function call and
+statement like) syntax for all programming abilities of ArtFormula. 
+
+<p><b><font size=4>Comments</font></b>
+
+<p>Comments are ignored by TArtFormula compiler. There are two
+ways to construct comments: text between a left brace and a right brace
+constitutes a comment. Any text between a double-slash and the end of the line
+constitutes a comment. 
+
+<p><b><font size=4>Types end Expressions</font></b>
+
+<p>ArtFormula has the only data type. Depending on expression
+ArtFormula treats data value ether as numeric or string type. For comparison
+operation (=, &lt;&gt; ,&gt;= , &lt;= , &gt;, &lt;) and addition ArtFormula
+tries to convert operand first to numeric values and if this impossible to
+string. For example: <i>&quot;123&quot; + 321</i> returns <i>444</i>, but <i>&quot;x123&quot;
++ 321</i> results in <i>&quot;x123321&quot;</i>. 
+
+<p>Numeric literals (integer and real) can be represented in
+common decimal notation. The dollar-sign prefix indicates a hexadecimal
+numeral. The first hexadecimal digit after $ must be one of 0..9 - for example
+$0AF (not $AF). 
+
+<p>String value can be enclosed both in double and single
+quotes. Two sequential apostrophes or double quotes in a same quoted string
+denote a corresponded single character. To specify symbol with special ASCII
+code use # symbol followed by corresponded integer constant. 
+
+<p>There is no boolean type. As in C language ArtFormula
+treats zero value as False and nonzero as True. 
+
+<p>Date and time are represented as floating point value. 
+
+<p><b><font size=4>Operators</font></b>
+
+<p>Numeric operators: +, - , * , /, % (or <i>mod</i>), \ (or <i>div</i>),
+^ (raise to a power). 
+
+<p>Comparison operators: =, &lt;&gt;, &gt;, &lt;, &gt;=,
+&lt;=. 
+
+<p>Logical operators: &amp; (or <i>and</i>), | (or <i>or</i>),
+<i>xor</i>, ! (or <i>not</i>). 
+
+<p>Bitwise operators: &amp;&amp; (or <i>band</i>), || (or <i>bor</i>),
+<i>bxor</i>, !! (or <i>bnot</i>), &lt;&lt; (or <i>shl</i>), &gt;&gt; (or <i>shr</i>). 
+
+<p>String operations: @ (concatenation), like (or ==).
+
+<p>Difference in addition and concatenation operations is that
+@ always treats its operands as strings, i.e. <i>&quot;123&quot; @ 321</i>
+results in <i>&quot;123321&quot;</i> (unlike it <i>&quot;123&quot; + 321</i>
+returns <i>444</i>). 
+
+<p><b><font size=4>Constants</font></b>
+
+<p>You can define new constant in ArtFormula program with extended syntax. Also
+you can add constant by AddConstant procedure of TArtFormula component.
+Constant in ArtFormula is not the same as in pascal. It more close to C
+#define. If ArtFormula compiler meets constant, it replaces constant with
+corresponded value. So you can define constant not only to specify numeric or
+string values but also for token replacement. 
+
+<p>For example you can define constant <i>MyIf</i> equals to <i>If
+x=0 then return(0) endif</i> and use <i>MyIf</i> as new statement. 
+
+<p><b><font size=4>Predefined functions</font></b> 
+
+<p>As ArtFormula descended from simple expression evaluation
+class, it has a wide number of predefined functions. 
+Default values of function are given in brackets.
+<p><b><i>Numeric functions:</i></b> 
+
+<p>Trigonometric, hyperbolic and invert functions: <br>
+<i>sin(x), cos(x), tan(x), asin(x), acos(x), atan(x), cosh(x), sinh(x),
+tanh(x), asinh(x), acosh(x), atanh(x)</i> <br>
+Exponential and logarithmical functions: <br>
+<i>log(x), lg(x) (log base 10), exp(x), sqrt(x)</i> <br>
+Integer and factional part of number: <i>int, frac</i> <br>
+<i>round(x,[n=0])</i> - to round a given value to a specific number of decimal places.
+<br><i>trunc(x,[n=0])</i> - to truncate a given value to a specific number of decimal places.
+<br>Absolute value: <i>abs</i> <br>
+Sign of a number: <i>sign</i> <br>
+Random value and initialization of the random number generator: <i>rnd,
+randomize</i> 
+
+<p><b><i>Statistical functions (all statistical functions take
+variable argument list):</i></b> 
+
+<p><i>max(x1,x2,...)</i> - maximum of
+passed values, <br>
+<i>min(x1,x2,...)</i> - minimum of passed values, <br>
+<i>avg(x1,x2,...)</i> - average value, <br>
+<i>stddev(x1,x2,...)</i> - standard deviation (unbiased), <br>
+<i>stddevp(x1,x2,...)</i> - standard deviation (biased), <br>
+<i>sum(x1,x2,...)</i> - sum of passed values, <br>
+<i>sumofsquares(x1,x2,…)</i> - sum of passed values squares <br>
+<i>count(x1,x2,...)</i> - count of passed values <br>
+<i>variance(x1,x2,...)</i> - variance (unbiased) <br>
+<i>variancep(x1,x2,...)</i> - variance (biased) 
+
+<p><b><i>Logical functions:</i></b> 
+
+<p><i>iff(e,x,[y=0])</i> - checks the
+expression passed as e and returns x if it evaluates to true, or y if it
+evaluates to false. <br>
+<i>isnumber(x)</i> - returns true if x is number. <br>
+<i>exists('varname')</i> - returns true if variable <i>varname</i> exists. 
+
+<p><b><i>String functions:</i></b> 
+
+<p><i>chr(x)</i> - returns character
+with ASCII code x. <br>
+<i>length(s)</i> - length of the string. <br>
+<i>trim(s), trimleft(s), trimright(s)</i> - trims leading and/or trailing
+spaces and control characters from a string <br>
+<i>uppercase(s), lowercase(s)</i> - converts an ASCII string to
+upper(lower)case. <br>
+<i>midstr(s,fron,len), leftstr(s,len), rightstr(s,len)</i> - returns the
+substring of a specified length that appears at the specified position (start,
+end) of a string. <br>
+<i>pos(t, s)</i> - returns the index value of the first character of t that
+occurs in s. <br>
+<i>code(s)</i> - returns then returns ASCII code of first character of string
+s. <br>
+<i>stringofchar([c=&quot; &quot;], count)</i> - returns a string with a specified number of
+repeating characters. <br>
+<i>concat(s1,s2,...)</i> - concatenates an arbitrary number of strings. 
+<i>hex(s)</i> - returns numeric value for hexadecimal string. <br>
+
+<p><b><i>Date and Time functions:</i></b> 
+
+<p><i>date(s)</i> - converts string to
+numeric date-time value. <br>
+<i>now</i> - returns the current date and time. <br>
+<i>dayofweek(d)</i> - returns the day of the week represented by a value d.
+Returns a value between 1 and 7, where 1 indicates Monday and 7 indicates
+Sunday. <br>
+<i>year(d), month(d), day(d), hour(d), minute(d), second(d), millisecond(d)</i>
+- returns corresponded part of date-time value <i>d</i>. <br>
+<i>isleapyear(n)</i> - indicates whether a specified year <i>n</i> is a leap
+year. <br>
+<i>encodedate(year, month, day)</i> - returns a date-time value that represents
+a specified year, month and day. 
+
+<p><b><i>Formatting functions:</i></b>
+
+
+<p><i>format(s,x)</i> - formats a
+floating point value x using the format string given by s. Uses the same format
+string as format Delphi FormatFloat function. <br>
+<i>formatf(s,x)</i> - formats a floating point value x using the format string
+given by s. Uses the same format string as format Delphi Format function. <br>
+<i>formatdate([s=&quot;c&quot;],d)</i> - formats a date-time value d using the format string
+given by s. Uses the same format string as format Delphi FormatDateTime
+function. 
+
+<p><b><i>Dialog functions:</i></b> 
+
+<p><i>input([caption=&quot;Input value&quot;], [prompt=&quot;Value&quot;], [val=&quot;&quot;])</i>
+- displays an input dialog box that lets the user enter a value. <br>
+<i>msg(text, [caption=&quot;Message&quot;], [flags=0])</i> - displays a specified message to the user. 
+
+<p><b>User functions and Modules</b> 
+
+<p>ArtFormula provides subroutines in ArtFormula programs with extended syntax (see below). 
+Also you can use AddUserFunction and AddModuleFunction
+procedures do add new functions and modules to ArtFormula. User functions are
+called in the same way as predefined functions. The call of module function
+should be preceded by module name and period (.). If module name followed by
+parenthesis with parameters, then ArtFormula calls main function of module
+first. 
+
+<p>For example: <i>module('x').fun('y')</i> - calls main
+function of module with argument <i>'x'</i> and then function <i>fun</i> with
+argument <i>'y'</i>; <i>module.fun('y')</i> - calls only function fun with
+argument <i>'y'</i>. 
+
+<p><b><font size=4>Variables and arrays</font></b> 
+
+<p>ArtFormula has three kinds of variables: global (see in Extended syntax section), external and
+internal. External variables are passed as argument of Compile procedure. Also
+if <b>ExternGetVar</b> is true, <b>ArtFormula</b> will consider all unknown
+identifiers as external variables. In this case you should implement <b>GetVarsCount</b>
+and <b>GetVarValue</b> event handlers. You can reference external variables by
+name. 
+
+<p>Internal variables are defined in ArtFormula program. There
+are two functions to define variable: 
+
+<p><i>define(&quot;name&quot;, value)</i> and <i>defines(&quot;name1&quot;, &quot;name2&quot;,
+&quot;name3&quot;, ...)</i>. 
+
+<p>Instead of <i>defines()</i> you can use next syntax: 
+
+<p><i>var &quot;name1&quot;, &quot;name2&quot;,
+&quot;name3&quot;, … end.</i> 
+
+<p>If <i>AutoCreateVars</i> property is true ArtFormula will create new variable with the first assignment statement. So you no need to use <i>define</i>, <i>defines</i> or <i>var</i> statement. But if unknown variable is in the expression, ArtFormula will rise an expression.
+
+<p>To get/set value of variable use functions: 
+
+<p><i>get(&quot;name&quot;)</i> and <i>set(&quot;name&quot;, value).</i> 
+
+<p>In place of <i>get(&quot;name&quot;)</i> you can use <i>$name</i>,
+and in place of <i>set(&quot;name&quot;, value)</i> - <i>$name := value.</i> 
+
+<p>As <i>set</i> and <i>get</i> are functions, you can use an
+expression to specify variable name. Corresponded alternative syntax is <i>$(expression)</i>.
+
+
+<p>ArtFormula provide two special functions for variable
+incrementing and decrementing: 
+
+<p><i>inc('name')</i> and <i>dec('name')</i>.
+Instead of function call you can use next syntax: <i>$name++</i> and <i>$name--</i>.
+
+
+<p>ArtFormula does not provide arrays, but can work with
+variables named <i>'n1', 'n2', 'n3'</i> ... as with array. To reference element
+of such &quot;array&quot; use expression <i>$('arrayname'@index)</i> or <i>$arrayname[index]</i>
+for example <i>$n[$i]</i>. Two dimensional arrays should consist of variables <i>'x1_1',
+'x1_2', 'x2_1'</i> and so on. To reference element: <i>$x[$i,$j]</i> (equal to <i>$('x'@$i@'_'@$j)</i>).
+You can define multidimensional arrays in the same way. 
+<p>Also you can use any strings as array indexes (like as in Perl hashes). For example: <i>$hello['word']</i>. But you should understand that <i>$hello['word']</i> is the same variable name as <i>$helloword</i>.
+<p><b><font size=4>Statements</font></b> 
+
+<p>ArtFormula has five special functions treated as
+statements. In fact these functions are not real functions as compiled in
+special bytecode. 
+
+<p><b><i>Return procedure:</i></b> 
+
+<p><i>return(value)</i> - stops
+evaluation and return value as a result of computation. 
+
+<p><b><i>Compound statement:</i></b> 
+
+<p><i>block(p1,p2,p3,…)</i> - returns
+value of last argument. 
+
+<p>Predefined constants: 
+
+<p><i>begin = block( <br>
+end = )</i> 
+
+<p>Corresponded alternative syntax: 
+
+<p><i>begin p1; p2; p3; … end.</i> 
+
+<p><b><i>If statement</i></b> 
+
+<p><i>condition(expression, p1, p2)</i> - returns p1 or p2 depending of expression value. 
+
+<p>Predefined constants: 
+
+<p><i>if = condition( <br>
+then = ,begin( <br>
+else = ),begin( <br>
+endd = )) <br>
+endif = ),0)</i> 
+
+<p>Corresponded alternative syntax: 
+
+<p><i>if expression then p1 else p2 endd or <br>
+if expression then p1 endif.</i> 
+
+<p>Pay attention that in first case statement should ends with
+<i>endd</i> as in fact <i>if expression then p1 else p2 endd</i> is equal to <i>condition(expression,
+block(p1), block(p2))</i>. 
+
+<p>Difference between <i>condition</i> and <i>iff</i>
+functions is that <i>iff</i> computes both its branches and <i>condition</i>
+only one. For example 
+
+<p><i>iff(1,message('1','1',0),message('0','0',0))</i> shows two message boxes and <br>
+<i>if 1; message('1','1',0); message('0','0',0) end</i> shows only first
+message box. 
+
+<p><b><i>While statement</i></b> 
+
+<p><i>loop(expression, p)</i> 
+
+<p>Predefined constants: 
+
+<p><i>while = loop( <br>
+do = ,begin( <br>
+wend = ))</i> 
+
+<p>Corresponded alternative syntax: 
+
+<p><i>while expression do p wend.</i> 
+
+<p><b><i>Repeat statement</i></b> 
+
+<p><i>till(p, expression)</i> 
+
+<p>Predefined constants: 
+
+<p><i>repeat = till(begin( <br>
+until = ),</i> 
+
+<p>Corresponded alternative syntax: 
+
+<p><i>repeat p until expression end.</i> 
+
+<p><b><i>For statement</i></b> 
+
+<p><i>series(initialization, condition, increment, p)</i>
+
+<p>Predefined constants: 
+
+<p><i>for = series( <br>
+next = ))</i> 
+
+<p>Corresponded alternative syntax: 
+
+<p><i>for initialization; condition; increment do p next </i>
+
+<p>For statement in ArtFormula is equal to C iterative loop.
+For example: 
+
+<p><i>for $i := 1; $i &lt;= 10; $i++ do $x[$i] := $i; next</i>
+
+<p>All loop functions return the number of iteration done. 
+
+<p><b><font size=4>Using ArtFormula</font></b> 
+
+<p>As all ArtFormula statements are functions call, you can
+use them in any expressions. For example next statements are correct for
+ArtFormula. 
+
+<p><i>$a := $b := 2; <br>
+$a := begin $c:=100; while $c&gt;10 ; $c-- end; $c-3 end; <br>
+for begin $a:=1; $c:=10 end; $a<10; begin $a++; $b++ end; $c--; end;</i> 
+
+<p><b><font size=4>Extended syntax</font></b>
+<p>With <b>TArtFormula v2.x+</b> you can use subroutines in your program. In this case program consists of the set of declaration:
+<ul>
+<li>Constants 
+<pre>
+     Const
+      constname1 = val1
+      constname2 = val2
+      ...
+</pre>
+<li>Global variables
+<pre>
+     Global
+      varname1[ = val1], varname2[ = val2] ...
+      ...
+</pre>
+<li>Subroutines
+<pre>
+     Sub subname1(paramname1[ = defvalue1], paramname2[ = defvalue2], ...)
+      begin
+      ...
+      end
+</pre>  
+</ul>
+<p>To call one subroutine from other just write it's name with required parameters. If default values of subroutines defined you can omit them, e.c. <i>msg('Text',,1)</i> will show message box with default caption 'Message'. 
+<p>Note that <i>begin end</i> block statement is optional in subroutine code as body of subroutine is just any valid formula.  
+<p>You can use recirsion in your subroutines. Also to make mutual recursion you should use forward declaration:
+<pre>
+    Forward [Sub] subname(paramname1[ = defvalue1], paramname2[ = defvalue2], ...);
+    ...
+    Sub subname()
+      begin
+      ...
+      end
+</pre>  
+Note that subroutine should be fully declared in <b>forward</b> declaration and should not be any parameter declaration in later subroutione code. All forward declaration should by satisfied or you get an error.
+
+<hr size=2 width="100%" align=center>
+
+
+<p><b><font size=4 color='navy'>TArtFormulaN</font></b>
+
+<p>ArtFormula package includes another component TArtFormulaN.
+This component is forerunner of TArtFormula. <br>
+TArtFormulaN can only evaluate numeric expressions. It doesn't support strings,
+arrays, modules, scripting, but it much faster (about five times) then
+TArtFormula. So you may wish to use TArtFormulaN when you need quick numeric
+computation along with ability to specify expression in symbolic notation in
+runtime. 
+<p>Also TArtFormulaN can symbolically evaluate derivatives of a function.
+
+<p>TArtFormulaN supports only the next functions: <br>
+<i>sin, cos, tan, log (or ln),lg, exp, sqrt, int, frac, abs, atan, asin, acos, asinh,acosh,atanh,cosh,sinh,tanh,
+sign, rnd, max, min, avg, stddev, stddevp, sum, sumofsquares, count, variance,
+variancep, iff.</i> 
+
+<p>Unlike TArtFormula user defined functions for TArtFormulaN
+takes two parameters: <i>(pos : integer; var data : array of double)</i>. Array
+represents a calculator stack and <i>pos</i> - position of stack top. So
+data[pos] is last parameter, data[pos-1] - next to last and so on. User
+defined function should returns result of double type. 
+
+<p>To evaluates derivative TArtFormulaN has 3 functions:
+<p><b>function</b> Diff(x : string):string; - to  differentiate the compiled function with respect to <i>x</i>.
+<p><b>function</b> DiffStr(instr : string; num : byte; vars : PStringArray; x : string):string; - to compile and differentiate function defined by <i>instr</i>.
+<p><b>function</b> DiffStr(instr : string; vars : string; x : string):string; - to compile and differentiate function defined by <i>instr</i> where variables are defined by comma divided list <i>vars</i>.
+
+
+
+<hr size=2 width="100%" align=center>
+
+
+<p><b><font size=4 color='navy'>History</font></b> 
+
+<p>First version of C++ class Formula (forerunner of
+TArtFormula) was written for Borland C++ compiler about 1997. Later it was
+ported to DJGPP environment and then to Borland C++ Builder. I've used Formula
+class for numeric research both in my master thesis (1999) and PhD dissertation
+(2002). About December 2004 I've decided to translate C++ Formula class to
+Delphi. Thus first version of pascal class TArtFormula was developed. Now this
+version is renamed to TArtFormulaN. In the middle of 2005 I've realized that I
+should extend ArtFormula syntax and add string handled functions to meet my
+requirements. So fist beta version of TArtFormula Delphi component was
+released. 
+
+<ul type=disc>
+ <li>Version 3.4 Recursion and forward declaration. 
+ <li>Version 3.3 Default values for functions and subroutines. 
+ <li>Version 3.2 Fixed some bugs in module functions evaluation. 
+ <li>Version 3.1 Added AutoCreateVars property, small Win CE Lazarus Demo. 
+ <li>Version 3.0 Added runtime line numbering, debugging, and SetLocalString function (proposed and written by Alan Bell bellsys@gmail.com). 
+ <li>Version 2.2: Added flag in AddUserFunction and AddModuleFunction to replace existed functions (including predefined) in runtime. Callback functions for modules. Changed error strings to show variable, constant and function names. Fixed some bugs in TArtFormulaN component. Many thanks to Alan Bell (bellsys@gmail.com).</li>
+ <li>Version 2.1.3: Fixed some bugs in TArtFormulaN component.</li>
+ <li>Version 2.1.2: Fixed some errors in TArtFormulaN component. Added support for ARM processors with Big Endianess. (Both thanks to Bogdan Vuk bogdan.vuk@siol.net)</li>
+ <li>Version 2.1.1: Little update. Fixed some errors in TArtFormulaN component.</li>
+ <li>Version 2.1: Improved Delphi XE+ compotability. Added hex, trunc and round functions. New Lazarus Demo.</li>
+ <li>Version 2.0: Added CompileProgram and RunSub procedures to treat source text as the set of subroutines with global vars and constants definition.</li>
+ <li>Version 1.8: Delphi XE compotability added</li>
+ <li>Version 1.7: Submodules (embedded modules of the form mainmodule.submodule.function), removed memory leak (thanks to Fabian Cios), improved spreadsheet calculation (thanks to Martin Stastny mstastny@vision.cz)  </li>
+ <li>Version 1.6: Added LIKE operator</li>
+ <li>Version 1.5.1: Added ModuleName, FunctionName and ParamCount properties. (suggested by Jonas Jasas Jr. (jon@stekas.lt))</li>
+ <li>Version 1.5: Added Lazarus support. Improved Delphi 2010 compatibility (thanks to slq.mail@163.com). Now ArtFormula will return changed values of external variables. Added ZeroEmptyString property</li>
+ <li>Version 1.4.1: Bug in spreadsheet calculation (reported by Martin Stastny) has been fixed.</li>
+ <li>Version 1.4: Added multlang support (thanks to Fabian Cios (servifabian@hotmail.com) for idea and Spanish lang). Fixed some bugs.</li>
+ <li>Version 1.3: Added derivatives evaluation. Fixed bug with external variables. Added bitwise operations.</li>
+ <li>Version 1.2: Fixed some bugs. Added Delphi 2009 support.</li>
+ <li>Version 1.1: Added &nbsp;ExternGetValue
+     mechanism, concat function. Iff function now can return string result. </li>
+ <li>Version 1.0b: First working version </li>
+</ul>
+
+<p>&nbsp; 
+
+
+<hr size=2 width="100%" align=center>
+
+
+<p><b><font size=4 color='navy'>Author</font></b> 
+
+<p>Artem V. Parlyuk, <a href="mailto:artsoft@nm.ru">e-mail:artsoft@nm.ru</a>, <a
+href="http://artsoft.nm.ru">http://artsoft.nm.ru</a> 
+
+<hr size=2 width="100%" align=center>
+
+<p><b><font size=4 color='navy'>License and disclaimer agreement</font></b> 
+
+<p><b>IMPORTANT - READ CAREFULLY</b> 
+
+<p>This license and disclaimer statement constitutes a legal
+agreement (&quot;License Agreement&quot;) between you (either as an individual
+or a single entity) and Artem Parlyuk (the &quot;Author&quot;), for this
+software product in this particular case TArtFormula Delphi package
+(&quot;Software&quot;), including any software, media, and accompanying on-line
+or printed documentation. 
+
+<p><b>BY DOWNLOADING, INSTALLING, COPYING, OR OTHERWISE USING
+THE SOFTWARE, YOU AGREE TO BE BOUND BY ALL OF THE TERMS AND CONDITIONS OF THIS
+LICENSE AND DISCLAIMER AGREEMENT.</b> If you do not
+agree with the terms and conditions of this agreement, you must promptly cease
+all use of the software and destroy all copies of this software and all of its
+component parts in your possession or under your control. 
+
+<p>This Software is owned by Author and is protected by
+copyright law and international copyright treaty. 
+
+<p>This Software is freeware. You are granted the permission
+to use Software in your own applications for private or commercial purposes,
+provided your software contains the copyright notice &quot;TArtFormula Delphi
+package Copyright (c) by Artem Parlyuk&quot; and link to the Author site
+(http://artsoft.nm.ru) and Author e-mail (mailto:artsoft@nm.ru) . 
+
+<p>You can freely distribute copies of the main archive as
+long as no alterations are made to the contents and no charge is raised except
+a reasonable fee for distributing costs. You may not remove copyright notices
+from copies of the Software. You may not claim this Software as written by
+anyone but Author, Artem Parlyuk. 
+
+<p>The author has taken all possible care to ensure the
+software is error-free, however the author disavows any potential liability
+arising from any use of the software. This software is provided &quot;as
+is&quot; and without any warranties expressed or implied, including, but not
+limited to, implied warranties of fitness for a particular purpose, and
+non-infringement. You expressly acknowledge and agree that use of the Software
+is at your sole risk. 
+
+<p>In no event shall the author be liable for any damages
+whatsoever (including, without limitation, damages for loss of business
+profits, business interruption, loss of business information, or other
+pecuniary loss) arising out of the use of or inability to use this software or
+documentation, even if the author has been advised of the possibility of such
+damages. 
+
+<p>Any feedback given to the Author will be treated as
+non-confidential. The Author may use any feedback free of charge without
+limitation. 
+
+
+</body>

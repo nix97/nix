@@ -1,0 +1,6 @@
+Note:
+
+-Build in Lazarus 1.6.4
+-Install first ArtFormula (aformula.lpk on folder formula\source).
+-Open Project
+-Run
