@@ -4,13 +4,19 @@ Subject of various problems on Numerical methods :
 >>app PDEs Solver
 
 The coverage of this problem are:
--Wave equation
--Heat equation
--Laplace's equation
--Poisson's equation
+-Wave equation using Finite-Difference method
+-Heat equation using Forward-Difference method
+-Laplace's equation Dirichlet method
+-Poisson's equation using Finite-Difference     method
 
-2. System of Ordinary Differential Equation
->>app
+2. System of Ordinary Differential Equation using Runge-Kutta fourth-order formula(RK4)
+>>app System of ODE Solver
+
+Solving of Two Differential Equation
+Y'(t)=F(t,x,y) and
+
+X'(t)=F(t,x,y)
+
 
 1. Conversion Number build in Lazarus 1.6.4 is an app for converting number from base to base (binary, octal, decimal, hexadecimal).   
 
