@@ -1,0 +1,501 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+</value>
+  </data>
+  <data name="richTextBox1.Text" xml:space="preserve">
+    <value>Wave Equation :
+ 
+Wave Equation is Partial Differential Equation(PDE) of hyperbolic type.
+The solution using Finite-Difference method.
+
+To approximate the solution of Utt(x,t)=c^2 Uxx(x,t) 
+over R = {(x,t): 0 ≤ x ≤ a, 0 ≤ t ≤ b with U(0,t)=0, U(a,t)=0 for 0 ≤ t ≤ b 
+and U(x,0)=F(x), Ut(x,0)=G(x) for 0 ≤ x ≤ a . 
+m,n are dimensions of the grid(for i=1 to n; for j=1 to m) 
+and c is wave equation constant.
+
+For example :
+Utt (x,t) = 4 Uxx (x,t)   for 0 &lt; x &lt; 1  and  0 &lt; t &lt; 0.5
+( from equation above we get a = 1 ; b = 0.5 ; c = 2 )   
+
+With the boundary conditions
+U ( 0 , t ) = 0  and  U ( 1 , t ) = 0  for 0 ≤ t ≤ 0.5
+U ( x , 0 ) = F ( x ) = sin ( π x ) + sin ( 2 π x )   for 0 ≤ x ≤ 1
+(from equation above we get F(x) = sin ( π x ) + sin ( 2 π x )   
+
+Ut ( x , 0 ) = G ( x ) = 0 ;  for 0 ≤ x ≤ 1
+(from equation above we get G(x) = 0 )   
+
+For illustration we use the step sizes ∆ x = h = 0.1  and  ∆ t = k = 0.05
+h = a/(n-1) ;   if we set h = 0.1 then we get n = 11
+k = b/(m-1) ;   if we set k = 0.05 then we get m = 11</value>
+  </data>
+  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+</value>
+  </data>
+  <data name="rtbHelp.Text" xml:space="preserve">
+    <value>Heat Equation :
+ 
+Heat Equation is PDE of parabolic type. 
+The solution using Forward-Difference method.
+
+To approximate the solution of Ut(x,t) = c^2 Uxx(x,t) 
+over R = { (x,t) : 0 ≤ x ≤ a, 0 ≤ t ≤ b} 
+with U(x,0) = F(x) for 0 ≤ x ≤ a and U(0,t) = c1,
+U(a,t) = c2 for 0 ≤ t ≤ b
+m,n are dimensions of the grid(for i=1 to n; for j=1 to m)
+and c, c1, c2 are constant
+
+For example :
+Ut (x,t) = Uxx (x,t)   for 0 &lt; x &lt; 1  and  0 &lt; t &lt; 0.2
+( from equation above we get a = 1 ; b = 0.2 ; c = 1 )   
+
+With the initial condition
+U (x,0) = F(x) = 4 x - 4 x ²  for t = 0  and  0 ≤ x ≤ 1 
+( from equation above we get F(x) = 4 x - 4 x ² )   
+
+And Boundary conditions
+U (0,t) = 0  (from here we get c1 = 0 )
+U (1,t) = 0 (from here we get c2 = 0 )
+
+For illustration we use the step sizes ∆ x = h = 0.2  and  ∆ t = k = 0.02
+h = a/(n-1) ;   if we set h = 0.2 then we get n = 6
+k = b/(m-1) ;   if we set k = 0.02 then we get m = 11</value>
+  </data>
+  <data name="pictureBox3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+        t/8ABCLbkDoQjxMAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="richTextBox2.Text" xml:space="preserve">
+    <value>Laplace's Equation :
+ 
+Laplace's Equation is PDE of elliptic type.
+The solution using Dirichlet method.
+
+To approximate the solution of Uxx(x,y) + Uyy(x,y) = 0
+or ∇ ² U = 0 ( ∇ is Laplace operator) 
+over R = {(x,y): 0 ≤ x ≤ a, 0 ≤ y ≤ b} 
+with u(x,0) = F1(x), u(x,b) = F2(x) 
+and u(0,y) = F3(y),u(a,y) = F4(y) for 0 ≤ y ≤ b. 
+It is assumed that Δx = Δy = h and that integers n and m exist 
+so that a = nh and b =mh.
+m,n are dimensions of the grid(for i=1 to n; for j=1 to m) 
+
+For example :
+Laplace's equation Uxx(x,y) + Uyy(x,y) = 0 in the rectangle 
+R = {(x,y): 0 ≤ x ≤ 4 ,  0 ≤ y ≤ 4 }
+the boundary values are
+U(x,0) = 20 and U(x,4) = 180  for  0 &lt; x &lt; 4 and
+U(0,y) = 80 and U(4,y) = 0  for  0 &lt; y &lt; 4
+from information above we get a = 4 ; b = 4 
+
+For illustration the step sizes ∆ x = h = 0.5  and  ∆ y = h = 0.5
+h = a/(n-1) ;   if we set h = 0.5  then we get n = 9
+h = b/(m-1) ;   if we set k = 0.05  then we get m = 9</value>
+  </data>
+  <data name="pictureBox4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+        RU5ErkJggg==
+</value>
+  </data>
+  <data name="richTextBox3.Text" xml:space="preserve">
+    <value>Poisson's Equation :
+ 
+Poisson's  Equation is PDE of elliptic type.
+The solution using Finite-Difference method .
+
+To approximate the solution to the Poisson equation:
+Uxx + Uyy  = F(x,y), where a &lt;= x &lt;= b, c &lt;= y &lt;= d
+ 
+Subject to boundary conditions :
+U(x,y) = G(x,y)
+ if x = a or x = b for c &lt;= y &lt;= d
+if y = c or y = d for a &lt;= x &lt;= b
+n : number of intervals n on X
+m : number of intervals m on Y
+Tol for tolerance, Max Iter for Maximum Iteration.
+
+For example :
+Poisson's equation Uxx + Uyy  = x^2+y^2  in the rectangle 
+R = {(x,y): -1 ≤ x ≤ 1 ,  -1 ≤ y ≤ 1 }
+From equation above we have F(x,y) = x^2+y^2 ;
+and we get a = -1 ; b = 1 ; c = -1 ; d = 1 ;
+
+Subject to boundary conditions :
+U(x,y) = G(x,y)= 0 ;
+we have G(x,y) = 0 ;
+
+For illustration we use Δx = h = 0.2 ; 
+Δy = k = 0.2 ; Tolerance = 1e-6 ; 
+Max iteration we set = 10000 ;
+h = (b - a) / n  ;  we get n = 10 ;
+k = (d - c) / m ;  we get m = 10 ;</value>
+  </data>
+  <data name="rtbMath.Text" xml:space="preserve">
+    <value>
+Constant π = pi = 3.14159265358979
+X to the power of  2  :  x^2
+Sine :  sin(x)
+Cosecant : csc(x) or cosec(x)
+Cosine  :  cos(x)
+Secant : sec(x)
+Tangent  :  tan(x) or tg(x)
+Cotangent : ctg(x) or cot(x) or ctan(x)
+Arc Sine  :  asin(x) or arsin(x)
+Arc Cosine  :  acos(x) or arcos(x)
+Arc Tangent  :  atan(x) or atg(x) 
+Arc Secant : asec(x)
+Arc Cosecant : acosec(x) or acsc(x)
+ArcCotangent: actg(x) or acot(x) or actan(x)
+Hyperbolic Sine  : sinh(x)
+Hyperbolic Cosine  : cosh(x)
+Hyperbolic Tangent  : tanh(x)
+Inverse Hyperbolic Sine  :  asinh(x)
+Inverse Hyperbolic Cosine  :  acosh(x)
+Inverse Hyperbolic Tangent  :  atanh(x)
+Inverse Hyperbolic Secant  :  asech(x)
+Inverse Hyperbolic Cosecant :   acosech(x) or acsch(x)
+Inverse Hyperbolic Cotangent  : acoth(x) or  actgh(x)  or actanh(x)
+Natural Logarithm  :  ln(x) 
+Logarithm base 10  :  log10(x) 
+Exponential (e^x)  : exp(x)
+Square Root  : sqrt(x)
+
+For testing the math function can use Tool left side.
+
+
+This app use libraries :
+
+1. mXparser(free version/NON-COMMERCIAL USE) by Mariusz Gromada as math expression parser, file MathParser.org-mXparser.Net46.dll
+   NON-COMMERCIAL USE examples:
+   -Free Open-Source Software (“FOSS”).
+   -Non-commercial use in research, scholarly and education.
+
+2. ProEssentials Gigasoft(free version/evaluating) for Viewing graph 3D with file  Gigasoft.ProEssentials.dll
+    </value>
+  </data>
+</root>

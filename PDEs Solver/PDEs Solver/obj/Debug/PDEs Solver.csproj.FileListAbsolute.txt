@@ -1,0 +1,13 @@
+E:\234\Data 2012\C#\PDEs Solver\PDEs Solver\bin\Debug\PDEs Solver.exe.config
+E:\234\Data 2012\C#\PDEs Solver\PDEs Solver\bin\Debug\PDEs Solver.exe
+E:\234\Data 2012\C#\PDEs Solver\PDEs Solver\bin\Debug\PDEs Solver.pdb
+E:\234\Data 2012\C#\PDEs Solver\PDEs Solver\obj\Debug\PDEs Solver.csprojAssemblyReference.cache
+E:\234\Data 2012\C#\PDEs Solver\PDEs Solver\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+E:\234\Data 2012\C#\PDEs Solver\PDEs Solver\obj\Debug\PDEs Solver.csproj.GenerateResource.cache
+E:\234\Data 2012\C#\PDEs Solver\PDEs Solver\obj\Debug\PDEs Solver.csproj.CoreCompileInputs.cache
+E:\234\Data 2012\C#\PDEs Solver\PDEs Solver\obj\Debug\PDEs Solver.exe
+E:\234\Data 2012\C#\PDEs Solver\PDEs Solver\obj\Debug\PDEs Solver.pdb
+E:\234\Data 2012\C#\PDEs Solver\PDEs Solver\bin\Debug\Gigasoft.ProEssentials.dll
+E:\234\Data 2012\C#\PDEs Solver\PDEs Solver\bin\Debug\MathParser.org-mXparser.Net46.dll
+E:\234\Data 2012\C#\PDEs Solver\PDEs Solver\obj\Debug\PDEs Solver.csproj.CopyComplete
+E:\234\Data 2012\C#\PDEs Solver\PDEs Solver\obj\Debug\WindowsFormsApp1.FormPDEs.resources

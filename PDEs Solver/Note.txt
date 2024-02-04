@@ -1,0 +1,26 @@
+PDEs Solver (Partial Differential Equations Solver):
+
+-Build in Microsoft Visual Studio 2017 (community edition/free version)
+-Build type> Windows Desktop - Windows form apps Visual C# (.Net Framework 4.6)
+
+-Use Free Library(*.dll):
+  1. mXparser> http://mathparser.org/     (As math equation parser)
+  2. Pro Essential gigasoft https://www.gigasoft.com/            (As Graphic 3D view)
+
+-For Try purpose only, just run file \HeatEquation\bin\Debug\PDEs Solver.exe   
+ (already installed .Net frame work https://dotnet.microsoft.com/en-us/download/dotnet-framework)
+
+-For Modify the app, just open Solution file(HeatEquation.sln) on Visual Studio 
+
+-Created by Lukas Setiawan (lukassetiawan@yahoo.com)
+
+-Have a try & free to modify...
+
+
+
+Tips:
+-right click mouse on the graph to viewing popup menu
+-use scroll mouse to zoom
+-drag vertical & horizontal scrollbar to change view graph
+
+ 
