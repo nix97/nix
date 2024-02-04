@@ -1,0 +1,260 @@
+object Form1: TForm1
+  Left = 159
+  Height = 635
+  Top = 24
+  Width = 1027
+  BorderIcons = [biSystemMenu, biMinimize]
+  Caption = 'Nix Geometry Transformation by Lukas Setiawan'
+  ClientHeight = 615
+  ClientWidth = 1027
+  Menu = MainMenu1
+  OnCreate = FormCreate
+  LCLVersion = '1.6.4.0'
+  object ButtonRun: TButton
+    Left = 17
+    Height = 34
+    Top = 472
+    Width = 72
+    Caption = 'Run'
+    Font.Style = [fsBold]
+    OnClick = ButtonRunClick
+    ParentFont = False
+    TabOrder = 0
+  end
+  object Chart1: TChart
+    Left = 408
+    Height = 600
+    Top = 8
+    Width = 600
+    AxisList = <    
+      item
+        Minors = <>
+        Title.LabelFont.Orientation = 900
+      end    
+      item
+        Alignment = calBottom
+        Minors = <>
+      end>
+    Foot.Brush.Color = clBtnFace
+    Foot.Font.Color = clBlue
+    Title.Brush.Color = clBtnFace
+    Title.Font.Color = clBlue
+    Title.Text.Strings = (
+      'TAChart'
+    )
+    ParentShowHint = False
+    object Series1: TLineSeries
+      LinePen.Color = clBlue
+      LinePen.Width = 2
+      Pointer.Style = psCircle
+      ShowPoints = True
+    end
+    object SeriesSumbuX: TLineSeries
+      LinePen.Width = 2
+    end
+    object SeriesSumbuY: TLineSeries
+      LinePen.Width = 2
+    end
+    object Series2: TLineSeries
+      LinePen.Color = clRed
+      LinePen.Width = 2
+      Pointer.Style = psCircle
+      ShowPoints = True
+    end
+  end
+  object Label1: TLabel
+    Left = 17
+    Height = 15
+    Top = 15
+    Width = 58
+    Caption = 'Polygon = '
+    ParentColor = False
+  end
+  object EditJumSisi: TEdit
+    Left = 88
+    Height = 23
+    Top = 16
+    Width = 80
+    TabOrder = 2
+  end
+  object StringGrid1: TStringGrid
+    Left = 17
+    Height = 336
+    Top = 112
+    Width = 223
+    ColCount = 3
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goEditing, goSmoothScroll]
+    RowCount = 101
+    TabOrder = 3
+  end
+  object ButtonAktif: TButton
+    Left = 112
+    Height = 33
+    Top = 56
+    Width = 72
+    Caption = 'Active Grid'
+    Font.Style = [fsBold]
+    OnClick = ButtonAktifClick
+    ParentFont = False
+    TabOrder = 4
+  end
+  object ButtonSample: TButton
+    Left = 17
+    Height = 33
+    Top = 56
+    Width = 72
+    Caption = 'Sample'
+    Font.Style = [fsBold]
+    OnClick = ButtonSampleClick
+    ParentFont = False
+    TabOrder = 5
+  end
+  object GroupBox1: TGroupBox
+    Left = 248
+    Height = 121
+    Top = 15
+    Width = 145
+    Caption = 'Translation'
+    ClientHeight = 101
+    ClientWidth = 141
+    TabOrder = 6
+    object CheckBoxTrans: TCheckBox
+      Left = 8
+      Height = 19
+      Top = 0
+      Width = 67
+      Caption = 'by T(a,b)'
+      TabOrder = 0
+    end
+    object Label2: TLabel
+      Left = 13
+      Height = 15
+      Top = 32
+      Width = 14
+      Caption = 'a='
+      ParentColor = False
+    end
+    object EditTransA: TEdit
+      Left = 32
+      Height = 23
+      Top = 32
+      Width = 72
+      TabOrder = 1
+    end
+    object Label3: TLabel
+      Left = 13
+      Height = 15
+      Top = 64
+      Width = 15
+      Caption = 'b='
+      ParentColor = False
+    end
+    object EditTransB: TEdit
+      Left = 32
+      Height = 23
+      Top = 64
+      Width = 72
+      TabOrder = 2
+    end
+  end
+  object ButtonClear: TButton
+    Left = 112
+    Height = 34
+    Top = 472
+    Width = 71
+    Caption = 'Clear'
+    Font.Style = [fsBold]
+    OnClick = ButtonClearClick
+    ParentFont = False
+    TabOrder = 7
+  end
+  object GroupBox2: TGroupBox
+    Left = 248
+    Height = 128
+    Top = 152
+    Width = 145
+    Caption = 'Rotation'
+    ClientHeight = 108
+    ClientWidth = 141
+    TabOrder = 8
+    object CheckBoxRotate: TCheckBox
+      Left = 8
+      Height = 19
+      Top = 8
+      Width = 54
+      Caption = 'Rotate'
+      TabOrder = 0
+    end
+    object ComboBoxRot: TComboBox
+      Left = 8
+      Height = 23
+      Top = 32
+      Width = 124
+      ItemHeight = 15
+      ItemIndex = 0
+      Items.Strings = (
+        'Clock wise'
+        'Anti clock wise'
+      )
+      TabOrder = 1
+      Text = 'Clock wise'
+    end
+    object Label4: TLabel
+      Left = 8
+      Height = 15
+      Top = 72
+      Width = 44
+      Caption = 'degree='
+      ParentColor = False
+    end
+    object EditDegree: TEdit
+      Left = 56
+      Height = 23
+      Top = 72
+      Width = 76
+      TabOrder = 2
+    end
+  end
+  object GroupBox3: TGroupBox
+    Left = 248
+    Height = 105
+    Top = 296
+    Width = 145
+    Caption = 'Scaling'
+    ClientHeight = 85
+    ClientWidth = 141
+    ParentFont = False
+    TabOrder = 9
+    object CheckBoxScale: TCheckBox
+      Left = 8
+      Height = 19
+      Top = 8
+      Width = 47
+      Caption = 'Scale'
+      TabOrder = 0
+    end
+    object Label5: TLabel
+      Left = 8
+      Height = 15
+      Top = 40
+      Width = 21
+      Caption = 'by='
+      ParentColor = False
+    end
+    object EditScale: TEdit
+      Left = 48
+      Height = 23
+      Top = 40
+      Width = 76
+      TabOrder = 1
+    end
+  end
+  object MainMenu1: TMainMenu
+    left = 205
+    top = 23
+    object MenuItem1: TMenuItem
+      Caption = 'About'
+      OnClick = MenuItem1Click
+    end
+  end
+end

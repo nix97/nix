@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Compiler Value="C:\lazarus1.6.4\fpc\3.0.2\bin\x86_64-win64\fpc.exe" Date="1247518955"/>
+  <Params Value=" -MObjFPC -Scghi -O1 -g -gl -WG -l -vewnhibq &quot;-FiE:\234\Data 2012\Lazarus\NixTransformation(sourcecodeLazarus)\lib\x86_64-win64&quot; -FuC:\lazarus1.6.4\components\tachart\lib\x86_64-win64\win32 -FuC:\lazarus1.6.4\components\ideintf\units\x86_64-win64\win32 -FuC:\lazarus1.6.4\components\opengl\lib\x86_64-win64\win32 -FuC:\lazarus1.6.4\components\lazcontrols\lib\x86_64-win64\win32 -FuC:\lazarus1.6.4\lcl\units\x86_64-win64\win32 -FuC:\lazarus1.6.4\lcl\units\x86_64-win64 -FuC:\lazarus1.6.4\components\lazutils\lib\x86_64-win64 -FuC:\lazarus1.6.4\packager\units\x86_64-win64 &quot;-FuE:\234\Data 2012\Lazarus\NixTransformation(sourcecodeLazarus)\&quot; &quot;-FUE:\234\Data 2012\Lazarus\NixTransformation(sourcecodeLazarus)\lib\x86_64-win64\&quot; -dLCL -dLCLwin32 project1.lpr"/>
+</CONFIG>
