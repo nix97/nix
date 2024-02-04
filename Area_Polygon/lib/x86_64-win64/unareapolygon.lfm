@@ -1,0 +1,174 @@
+object Form1: TForm1
+  Left = 41
+  Height = 598
+  Top = 71
+  Width = 1282
+  Caption = 'Area of Irregular Polygon...by Lukas Setiawan'
+  ClientHeight = 598
+  ClientWidth = 1282
+  OnCreate = FormCreate
+  LCLVersion = '1.8.0.6'
+  object Label1: TLabel
+    Left = 24
+    Height = 15
+    Top = 16
+    Width = 144
+    Caption = 'Number of sides (points)='
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object EditNumSide: TEdit
+    Left = 168
+    Height = 23
+    Top = 16
+    Width = 96
+    TabOrder = 0
+  end
+  object sg: TStringGrid
+    Left = 24
+    Height = 481
+    Top = 71
+    Width = 360
+    ColCount = 3
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goColSizing, goEditing, goSmoothScroll]
+    RowCount = 101
+    TabOrder = 1
+  end
+  object ButInput: TButton
+    Left = 408
+    Height = 34
+    Top = 17
+    Width = 83
+    Caption = 'Active Grid'
+    Font.Style = [fsBold]
+    OnClick = ButInputClick
+    ParentFont = False
+    TabOrder = 2
+  end
+  object ButRun: TButton
+    Left = 520
+    Height = 33
+    Top = 16
+    Width = 83
+    Caption = 'Run'
+    Font.Style = [fsBold]
+    OnClick = ButRunClick
+    ParentFont = False
+    TabOrder = 3
+  end
+  object Chart1: TChart
+    Left = 416
+    Height = 481
+    Top = 71
+    Width = 560
+    AxisList = <    
+      item
+        Minors = <>
+        Title.LabelFont.Orientation = 900
+      end    
+      item
+        Alignment = calBottom
+        Minors = <>
+      end>
+    Foot.Brush.Color = clBtnFace
+    Foot.Font.Color = clBlue
+    Title.Brush.Color = clBtnFace
+    Title.Font.Color = clBlue
+    Title.Text.Strings = (
+      'TAChart'
+    )
+    object Series1: TLineSeries
+      LinePen.Color = clBlue
+      LinePen.Width = 2
+      Pointer.Brush.Color = clRed
+      Pointer.Style = psCircle
+      ShowPoints = True
+    end
+  end
+  object ButExample: TButton
+    Left = 296
+    Height = 33
+    Top = 16
+    Width = 83
+    Caption = 'Example'
+    Font.Style = [fsBold]
+    OnClick = ButExampleClick
+    ParentFont = False
+    TabOrder = 5
+  end
+  object LabelArea: TLabel
+    Left = 760
+    Height = 25
+    Top = 16
+    Width = 72
+    Caption = 'Area = ?'
+    Font.Height = -19
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object ButClear: TButton
+    Left = 632
+    Height = 32
+    Top = 17
+    Width = 83
+    Caption = 'Clear'
+    Font.Style = [fsBold]
+    OnClick = ButClearClick
+    ParentFont = False
+    TabOrder = 6
+  end
+  object Memo1: TMemo
+    Left = 1016
+    Height = 216
+    Top = 96
+    Width = 240
+    Lines.Strings = (
+      'App for counting Area of Irregular Polygon'
+      ''
+      '-Click Example and Run'
+      '-Input Number of sides and Active Grid'
+      '-Input Coordinates (Xi,Yi)'
+      '-Note: '
+      '  -To inputing coordinate,must in circle form(not cross each other), just like example'
+      '  -If the Polygon have corner'
+      '-Take a look exception in button Note'
+      '-That''s it... '
+    )
+    ScrollBars = ssAutoVertical
+    TabOrder = 7
+  end
+  object Label3: TLabel
+    Left = 1024
+    Height = 15
+    Top = 71
+    Width = 32
+    Caption = 'Help :'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Button1: TButton
+    Left = 1016
+    Height = 35
+    Top = 352
+    Width = 83
+    Caption = 'Note'
+    Font.Style = [fsBold]
+    OnClick = Button1Click
+    ParentFont = False
+    TabOrder = 8
+  end
+  object Button2: TButton
+    Left = 1128
+    Height = 35
+    Top = 352
+    Width = 83
+    Caption = 'About'
+    Font.Style = [fsBold]
+    OnClick = Button2Click
+    ParentFont = False
+    TabOrder = 9
+  end
+end
