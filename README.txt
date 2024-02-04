@@ -14,8 +14,15 @@ The coverage of this problem are:
 
 Solving of Two Differential Equation
 Y'(t)=F(t,x,y) and
+X'(t)=F(t,x,y) use IVP(Initial Value Problem)
 
-X'(t)=F(t,x,y)
+3. Third-Order Differential Equation 
+using Runge-Kutta fourth-order formula(RK4)
+>>app Third-Order ODE Solver
+
+Diff equation Y'''(t)=F(t,y,y',y'')
+use IVP(Initial Value Problem)
+
 
 
 1. Conversion Number build in Lazarus 1.6.4 is an app for converting number from base to base (binary, octal, decimal, hexadecimal).   
