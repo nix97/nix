@@ -31,6 +31,11 @@ use IVP(Initial Value Problem)
 6. WaveEquation
   Matlab sourcecode file in GUI (*.m and *.fig)
 
+7. Linear Shooting Method
+To approximate the solution of the boundary value problem (bvp) x '' = p(t) x'(t) + q(t) x(t) + r(t) 
+with x(a) = alpha and x(b) = beta over the interval [a , b], subinterval M by using the Runge-Kutta 
+method of order 4.
+
     
 Another works(Math stuff ,app and sourcecode on   https://bitbucket.org/nixz97/nix/downloads/)
 
