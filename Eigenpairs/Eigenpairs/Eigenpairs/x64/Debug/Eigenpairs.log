@@ -1,0 +1,107 @@
+﻿  CppCLR_WinFormsProject.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\vcruntime_new.h(48,17): error C2323: 'CppCLRWinFormsProject::operator new': non-member operator new or delete functions may not be declared static or in a namespace other than the global namespace
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\vcruntime_new.h(55,12): error C2039: 'nothrow_t': is not a member of 'std'
+E:\234\Data 2012\C_CPP\Eigenpairs\Eigenpairs\Eigenpairs\predefined C++ types (compiler internal)(347,11): message : see declaration of 'std'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\vcruntime_new.h(55,12): error C2061: syntax error: identifier 'nothrow_t'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\vcruntime_new.h(53,17): error C2323: 'CppCLRWinFormsProject::operator new': non-member operator new or delete functions may not be declared static or in a namespace other than the global namespace
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\vcruntime_new.h(59,17): error C2323: 'CppCLRWinFormsProject::operator new[]': non-member operator new or delete functions may not be declared static or in a namespace other than the global namespace
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\vcruntime_new.h(66,12): error C2039: 'nothrow_t': is not a member of 'std'
+E:\234\Data 2012\C_CPP\Eigenpairs\Eigenpairs\Eigenpairs\predefined C++ types (compiler internal)(347,11): message : see declaration of 'std'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\vcruntime_new.h(66,12): error C2061: syntax error: identifier 'nothrow_t'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\vcruntime_new.h(64,17): error C2323: 'CppCLRWinFormsProject::operator new[]': non-member operator new or delete functions may not be declared static or in a namespace other than the global namespace
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\vcruntime_new.h(69,16): error C2323: 'CppCLRWinFormsProject::operator delete': non-member operator new or delete functions may not be declared static or in a namespace other than the global namespace
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\vcruntime_new.h(75,12): error C2039: 'nothrow_t': is not a member of 'std'
+E:\234\Data 2012\C_CPP\Eigenpairs\Eigenpairs\Eigenpairs\predefined C++ types (compiler internal)(347,11): message : see declaration of 'std'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\vcruntime_new.h(75,12): error C2061: syntax error: identifier 'nothrow_t'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\vcruntime_new.h(73,16): error C2323: 'CppCLRWinFormsProject::operator delete': non-member operator new or delete functions may not be declared static or in a namespace other than the global namespace
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\vcruntime_new.h(78,16): error C2323: 'CppCLRWinFormsProject::operator delete[]': non-member operator new or delete functions may not be declared static or in a namespace other than the global namespace
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\vcruntime_new.h(84,12): error C2039: 'nothrow_t': is not a member of 'std'
+E:\234\Data 2012\C_CPP\Eigenpairs\Eigenpairs\Eigenpairs\predefined C++ types (compiler internal)(347,11): message : see declaration of 'std'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\vcruntime_new.h(84,12): error C2061: syntax error: identifier 'nothrow_t'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\vcruntime_new.h(82,16): error C2323: 'CppCLRWinFormsProject::operator delete[]': non-member operator new or delete functions may not be declared static or in a namespace other than the global namespace
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\vcruntime_new.h(87,16): error C2323: 'CppCLRWinFormsProject::operator delete': non-member operator new or delete functions may not be declared static or in a namespace other than the global namespace
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\vcruntime_new.h(92,16): error C2323: 'CppCLRWinFormsProject::operator delete[]': non-member operator new or delete functions may not be declared static or in a namespace other than the global namespace
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\vcruntime_new.h(166,28): error C2323: 'CppCLRWinFormsProject::operator new': non-member operator new or delete functions may not be declared static or in a namespace other than the global namespace
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\vcruntime_new.h(173,27): error C2323: 'CppCLRWinFormsProject::operator delete': non-member operator new or delete functions may not be declared static or in a namespace other than the global namespace
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\vcruntime_new.h(182,28): error C2323: 'CppCLRWinFormsProject::operator new[]': non-member operator new or delete functions may not be declared static or in a namespace other than the global namespace
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\vcruntime_new.h(189,27): error C2323: 'CppCLRWinFormsProject::operator delete[]': non-member operator new or delete functions may not be declared static or in a namespace other than the global namespace
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\vcruntime_new_debug.h(26,37): error C2323: 'CppCLRWinFormsProject::operator new': non-member operator new or delete functions may not be declared static or in a namespace other than the global namespace
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\vcruntime_new_debug.h(34,37): error C2323: 'CppCLRWinFormsProject::operator new[]': non-member operator new or delete functions may not be declared static or in a namespace other than the global namespace
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\vcruntime_new_debug.h(41,20): error C2323: 'CppCLRWinFormsProject::operator delete': non-member operator new or delete functions may not be declared static or in a namespace other than the global namespace
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\vcruntime_new_debug.h(48,20): error C2323: 'CppCLRWinFormsProject::operator delete[]': non-member operator new or delete functions may not be declared static or in a namespace other than the global namespace
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(37,13): error C2039: '_Mbstatet': is not a member of '`global namespace''
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(37,1): error C2873: '_Mbstatet': symbol cannot be used in a using-declaration
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(40,25): error C2039: 'fpos_t': is not a member of '`global namespace''
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(40,13): error C2873: 'fpos_t': symbol cannot be used in a using-declaration
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(41,25): error C2039: 'FILE': is not a member of '`global namespace''
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(41,13): error C2873: 'FILE': symbol cannot be used in a using-declaration
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(42,25): error C2039: 'clearerr': is not a member of '`global namespace''
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(42,13): error C2873: 'clearerr': symbol cannot be used in a using-declaration
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(43,25): error C2039: 'fclose': is not a member of '`global namespace''
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(43,13): error C2873: 'fclose': symbol cannot be used in a using-declaration
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(44,25): error C2039: 'feof': is not a member of '`global namespace''
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(44,13): error C2873: 'feof': symbol cannot be used in a using-declaration
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(45,25): error C2039: 'ferror': is not a member of '`global namespace''
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(45,13): error C2873: 'ferror': symbol cannot be used in a using-declaration
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(46,25): error C2039: 'fflush': is not a member of '`global namespace''
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(46,13): error C2873: 'fflush': symbol cannot be used in a using-declaration
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(47,25): error C2039: 'fgetc': is not a member of '`global namespace''
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(47,13): error C2873: 'fgetc': symbol cannot be used in a using-declaration
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(48,25): error C2039: 'fgetpos': is not a member of '`global namespace''
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(48,13): error C2873: 'fgetpos': symbol cannot be used in a using-declaration
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(49,25): error C2039: 'fgets': is not a member of '`global namespace''
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(49,13): error C2873: 'fgets': symbol cannot be used in a using-declaration
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(50,25): error C2039: 'fopen': is not a member of '`global namespace''
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(50,13): error C2873: 'fopen': symbol cannot be used in a using-declaration
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(51,25): error C2039: 'fprintf': is not a member of '`global namespace''
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(51,13): error C2873: 'fprintf': symbol cannot be used in a using-declaration
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(52,25): error C2039: 'fputc': is not a member of '`global namespace''
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(52,13): error C2873: 'fputc': symbol cannot be used in a using-declaration
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(53,25): error C2039: 'fputs': is not a member of '`global namespace''
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(53,13): error C2873: 'fputs': symbol cannot be used in a using-declaration
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(54,25): error C2039: 'fread': is not a member of '`global namespace''
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(54,13): error C2873: 'fread': symbol cannot be used in a using-declaration
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(55,25): error C2039: 'freopen': is not a member of '`global namespace''
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(55,13): error C2873: 'freopen': symbol cannot be used in a using-declaration
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(56,25): error C2039: 'fscanf': is not a member of '`global namespace''
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(56,13): error C2873: 'fscanf': symbol cannot be used in a using-declaration
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(57,25): error C2039: 'fseek': is not a member of '`global namespace''
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(57,13): error C2873: 'fseek': symbol cannot be used in a using-declaration
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(58,25): error C2039: 'fsetpos': is not a member of '`global namespace''
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(58,13): error C2873: 'fsetpos': symbol cannot be used in a using-declaration
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(59,25): error C2039: 'ftell': is not a member of '`global namespace''
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(59,13): error C2873: 'ftell': symbol cannot be used in a using-declaration
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(60,25): error C2039: 'fwrite': is not a member of '`global namespace''
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(60,13): error C2873: 'fwrite': symbol cannot be used in a using-declaration
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(61,25): error C2039: 'getc': is not a member of '`global namespace''
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(61,13): error C2873: 'getc': symbol cannot be used in a using-declaration
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(62,25): error C2039: 'getchar': is not a member of '`global namespace''
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(62,13): error C2873: 'getchar': symbol cannot be used in a using-declaration
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(63,25): error C2039: 'perror': is not a member of '`global namespace''
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(63,13): error C2873: 'perror': symbol cannot be used in a using-declaration
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(64,25): error C2039: 'putc': is not a member of '`global namespace''
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(64,13): error C2873: 'putc': symbol cannot be used in a using-declaration
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(65,25): error C2039: 'putchar': is not a member of '`global namespace''
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(65,13): error C2873: 'putchar': symbol cannot be used in a using-declaration
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(66,25): error C2039: 'printf': is not a member of '`global namespace''
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(66,13): error C2873: 'printf': symbol cannot be used in a using-declaration
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(67,25): error C2039: 'puts': is not a member of '`global namespace''
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(67,13): error C2873: 'puts': symbol cannot be used in a using-declaration
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(68,25): error C2039: 'remove': is not a member of '`global namespace''
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(68,13): error C2873: 'remove': symbol cannot be used in a using-declaration
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(69,25): error C2039: 'rename': is not a member of '`global namespace''
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(69,13): error C2873: 'rename': symbol cannot be used in a using-declaration
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(70,25): error C2039: 'rewind': is not a member of '`global namespace''
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(70,13): error C2873: 'rewind': symbol cannot be used in a using-declaration
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(71,25): error C2039: 'scanf': is not a member of '`global namespace''
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(71,13): error C2873: 'scanf': symbol cannot be used in a using-declaration
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(72,25): error C2039: 'setbuf': is not a member of '`global namespace''
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(72,13): error C2873: 'setbuf': symbol cannot be used in a using-declaration
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(73,25): error C2039: 'setvbuf': is not a member of '`global namespace''
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(73,13): error C2873: 'setvbuf': symbol cannot be used in a using-declaration
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(74,25): error C2039: 'sprintf': is not a member of '`global namespace''
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(74,13): error C2873: 'sprintf': symbol cannot be used in a using-declaration
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(75,25): error C2039: 'sscanf': is not a member of '`global namespace''
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(75,13): error C2873: 'sscanf': symbol cannot be used in a using-declaration
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(76,25): error C2039: 'tmpfile': is not a member of '`global namespace''
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\cstdio(76,32): fatal  error C1003: error count exceeds 100; stopping compilation

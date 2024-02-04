@@ -1,0 +1,14 @@
+Notes :
+
+
+-App Eigenpairs Solver
+-This app build in Visual Studio Community Edition 2022  ( C# ; .Net framework 4.8 ) .
+-Project Windows Desktop(win form).
+-It's free to modify.
+-Created by Lukas Setiawan (lukassetiawan@yahoo.com).
+
+
+
+Happy coding...
+
+ 
