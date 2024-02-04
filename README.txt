@@ -36,6 +36,14 @@ To approximate the solution of the boundary value problem (bvp) x '' = p(t) x'(t
 with x(a) = alpha and x(b) = beta over the interval [a , b], subinterval M by using the Runge-Kutta 
 method of order 4.
 
+8. Matrix Solver
+To solve matrix problems such as Multiplication, Determinant, Invers, Linear System, Eigenpairs
+and Singular Value Decomposition(SVD).
+
+9.Second-order ODE Solver using Runge-Kutta-Fehlberg (RKF45)
+To solving initial value problem (ivp) second-order Ordinary Differential Equation(ODE) 
+using Runge-Kutta-Fehlberg formula (RKF45).
+
     
 Another works(Math stuff ,app and sourcecode on   https://bitbucket.org/nixz97/nix/downloads/)
 
