@@ -1,0 +1,13 @@
+E:\234\Data 2012\C#\Third-OrderODE\ThirdOrderODE\ThirdOrderODE\bin\Debug\ThirdOrderODE.exe.config
+E:\234\Data 2012\C#\Third-OrderODE\ThirdOrderODE\ThirdOrderODE\bin\Debug\ThirdOrderODE.exe
+E:\234\Data 2012\C#\Third-OrderODE\ThirdOrderODE\ThirdOrderODE\bin\Debug\ThirdOrderODE.pdb
+E:\234\Data 2012\C#\Third-OrderODE\ThirdOrderODE\ThirdOrderODE\obj\Debug\ThirdOrderODE.csproj.AssemblyReference.cache
+E:\234\Data 2012\C#\Third-OrderODE\ThirdOrderODE\ThirdOrderODE\obj\Debug\ThirdOrderODE.Form1.resources
+E:\234\Data 2012\C#\Third-OrderODE\ThirdOrderODE\ThirdOrderODE\obj\Debug\ThirdOrderODE.Properties.Resources.resources
+E:\234\Data 2012\C#\Third-OrderODE\ThirdOrderODE\ThirdOrderODE\obj\Debug\ThirdOrderODE.csproj.GenerateResource.cache
+E:\234\Data 2012\C#\Third-OrderODE\ThirdOrderODE\ThirdOrderODE\obj\Debug\ThirdOrderODE.csproj.CoreCompileInputs.cache
+E:\234\Data 2012\C#\Third-OrderODE\ThirdOrderODE\ThirdOrderODE\obj\Debug\ThirdOrderODE.exe
+E:\234\Data 2012\C#\Third-OrderODE\ThirdOrderODE\ThirdOrderODE\obj\Debug\ThirdOrderODE.pdb
+E:\234\Data 2012\C#\Third-OrderODE\ThirdOrderODE\ThirdOrderODE\bin\Debug\MathParser.org-mXparser.dll
+E:\234\Data 2012\C#\Third-OrderODE\ThirdOrderODE\ThirdOrderODE\obj\Debug\ThirdOrderODE.csproj.CopyComplete
+E:\234\Data 2012\C#\Third-OrderODE\ThirdOrderODE\ThirdOrderODE\obj\Debug\ThirdOrderODE.FormFormula.resources
