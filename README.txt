@@ -28,8 +28,9 @@ use IVP(Initial Value Problem)
 
 5. Matrix Determinant build in Lazarus 1.6.4 is an app for finding Determinant of Matrix using LU Decomposition.
 
-6. WaveEquation
-  Matlab sourcecode file in GUI (*.m and *.fig)
+6. Wave Equation
+Finite-Difference Solution for the Wave Equation Utt(t,x) = c^2 Uxx(t,x)
+It's using GUI on matlab.
 
 7. Linear Shooting Method
 To approximate the solution of the boundary value problem (bvp) x '' = p(t) x'(t) + q(t) x(t) + r(t) 
