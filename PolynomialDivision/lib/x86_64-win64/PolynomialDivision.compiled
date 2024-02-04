@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Compiler Value="D:\lazarus\fpc\3.0.2\bin\x86_64-win64\fpc.exe" Date="1247518955"/>
+  <Params Value=" -MObjFPC -Scghi -O1 -g -gl -WG -l -vewnhibq &quot;-FiE:\234\Data 2012\Lazarus\PolynomialDivision\lib\x86_64-win64&quot; -FuD:\lazarus\lcl\units\x86_64-win64\win32 -FuD:\lazarus\lcl\units\x86_64-win64 -FuD:\lazarus\components\lazutils\lib\x86_64-win64 -FuD:\lazarus\packager\units\x86_64-win64 &quot;-FuE:\234\Data 2012\Lazarus\PolynomialDivision\&quot; &quot;-FUE:\234\Data 2012\Lazarus\PolynomialDivision\lib\x86_64-win64\&quot; -dLCL -dLCLwin32 PolynomialDivision.lpr"/>
+</CONFIG>
