@@ -1,4 +1,4 @@
-Subject of various problems on Numerical methods :
+Subject of various math problems on Numerical methods :
 
 1. Partial Differential Equations(PDEs)
 >>app PDEs Solver
