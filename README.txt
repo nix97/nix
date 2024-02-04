@@ -52,6 +52,11 @@ and Eigenvector V ) of the Real symmentrical matrix A.
 
 Eigenproblem is   A V = λ V 
 
+11. Gauss Jordan for solving Systems of Linear Equations
+This app for solving Systems of Linear Equations 
+(AX=B) using Gauss Jordan method.
+
+
     
 Another works(Math stuff ,app and sourcecode on   https://bitbucket.org/nixz97/nix/downloads/)
 
