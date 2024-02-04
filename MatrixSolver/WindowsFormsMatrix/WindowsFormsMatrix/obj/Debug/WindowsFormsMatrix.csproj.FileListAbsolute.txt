@@ -1,0 +1,23 @@
+E:\555\MatrixSolver\WindowsFormsMatrix\WindowsFormsMatrix\bin\Debug\WindowsFormsMatrix.exe.config
+E:\555\MatrixSolver\WindowsFormsMatrix\WindowsFormsMatrix\bin\Debug\WindowsFormsMatrix.exe
+E:\555\MatrixSolver\WindowsFormsMatrix\WindowsFormsMatrix\bin\Debug\WindowsFormsMatrix.pdb
+E:\555\MatrixSolver\WindowsFormsMatrix\WindowsFormsMatrix\obj\Debug\WindowsFormsMatrix.csprojAssemblyReference.cache
+E:\555\MatrixSolver\WindowsFormsMatrix\WindowsFormsMatrix\obj\Debug\WindowsFormsApp1.Form1.resources
+E:\555\MatrixSolver\WindowsFormsMatrix\WindowsFormsMatrix\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+E:\555\MatrixSolver\WindowsFormsMatrix\WindowsFormsMatrix\obj\Debug\WindowsFormsMatrix.csproj.GenerateResource.cache
+E:\555\MatrixSolver\WindowsFormsMatrix\WindowsFormsMatrix\obj\Debug\WindowsFormsMatrix.csproj.CoreCompileInputs.cache
+E:\555\MatrixSolver\WindowsFormsMatrix\WindowsFormsMatrix\obj\Debug\WindowsFormsMatrix.exe
+E:\555\MatrixSolver\WindowsFormsMatrix\WindowsFormsMatrix\obj\Debug\WindowsFormsMatrix.pdb
+E:\555\MatrixSolver\WindowsFormsMatrix\WindowsFormsMatrix\obj\Debug\WindowsFormsMatrix.csproj.CopyComplete
+E:\555\MatrixSolver\WindowsFormsMatrix\WindowsFormsMatrix\bin\Debug\alglib320gpl_net2.dll
+E:\234\Data 2012\C#\MatrixSolver\WindowsFormsMatrix\WindowsFormsMatrix\bin\Debug\WindowsFormsMatrix.exe.config
+E:\234\Data 2012\C#\MatrixSolver\WindowsFormsMatrix\WindowsFormsMatrix\bin\Debug\WindowsFormsMatrix.exe
+E:\234\Data 2012\C#\MatrixSolver\WindowsFormsMatrix\WindowsFormsMatrix\bin\Debug\WindowsFormsMatrix.pdb
+E:\234\Data 2012\C#\MatrixSolver\WindowsFormsMatrix\WindowsFormsMatrix\obj\Debug\WindowsFormsMatrix.csprojAssemblyReference.cache
+E:\234\Data 2012\C#\MatrixSolver\WindowsFormsMatrix\WindowsFormsMatrix\obj\Debug\WindowsFormsApp1.Form1.resources
+E:\234\Data 2012\C#\MatrixSolver\WindowsFormsMatrix\WindowsFormsMatrix\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+E:\234\Data 2012\C#\MatrixSolver\WindowsFormsMatrix\WindowsFormsMatrix\obj\Debug\WindowsFormsMatrix.csproj.GenerateResource.cache
+E:\234\Data 2012\C#\MatrixSolver\WindowsFormsMatrix\WindowsFormsMatrix\obj\Debug\WindowsFormsMatrix.csproj.CoreCompileInputs.cache
+E:\234\Data 2012\C#\MatrixSolver\WindowsFormsMatrix\WindowsFormsMatrix\obj\Debug\WindowsFormsMatrix.csproj.CopyComplete
+E:\234\Data 2012\C#\MatrixSolver\WindowsFormsMatrix\WindowsFormsMatrix\obj\Debug\WindowsFormsMatrix.exe
+E:\234\Data 2012\C#\MatrixSolver\WindowsFormsMatrix\WindowsFormsMatrix\obj\Debug\WindowsFormsMatrix.pdb

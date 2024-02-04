@@ -1,0 +1,10 @@
+Notes :
+
+-This app build in Visual Studio Community 2017  (.Net framework 4.6).
+-Especially menu SVD use library alglib free version.
+-It's free to modify.
+-Created by Lukas Setiawan (lukassetiawan@yahoo.com).
+
+Happy coding...
+
+ 

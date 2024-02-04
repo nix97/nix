@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <metadata name="btDetRun.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="btRunInv.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="richTextBox1.Text" xml:space="preserve">
+    <value>Matrix Multiplication :
+
+Multiply between Matrix A (order m x n) with Matrix B (order p x q), the result is Matrix C.
+Matrix A and B can be multiplied if Columns matrix A = Rows matrix B.
+
+How to use  :
+-For example : Click button Example and then Run.
+-Input m, n, q in the box  and then click button Active to know the right position
+ to input matrix A and B (just like the example), and then Run.</value>
+  </data>
+  <data name="richTextBox4.Text" xml:space="preserve">
+    <value>Determinant :
+
+To compute the Determinant of square matrix A using LU (lower-upper) Decomposition.
+
+How to use :
+-For example : Click button Example and then Run.
+-Input n, then click Active. 
+-Input entries/elements matrix A, then Run.    
+-The Result is Determinant of matrix A. </value>
+  </data>
+  <data name="richTextBox5.Text" xml:space="preserve">
+    <value>Inverse :
+
+To compute the Inverse of square matrix A.
+
+How to use :
+-For example : Click button Example and then Run.
+-Input n, then click Active. 
+-Input entries/elements matrix A, then Run.    
+-The Result is Inverse of matrix A. </value>
+  </data>
+  <data name="richTextBox6.Text" xml:space="preserve">
+    <value>System of Linear Equations :
+
+The solution of System of Linear Equations (A X = B ) using Gauss Jordan Elimination Method.
+ 
+For example :
+We have 3 linear equations (3 variables) :
+1.  2X1-3X2+X3 = 11
+2.  X1+2X2-2X3 = -9
+3.  3X1+2X2-3X3 = 10
+As the result, we got :
+X1=1; X2= -2; X3=3 ;
+Note : if have no coefficient then input 0 (zero) in cell.
+ 
+How to use :
+-For example : Click button Example and then Run.
+-Input number of equation, then click Active. 
+-Input coefficients of linear equations (A1...An) and RHS(right hand side) B, then Run.    
+-The Result is X i (for i=1 to n).</value>
+  </data>
+  <data name="richTextBox3.Text" xml:space="preserve">
+    <value>Eigenvalues and Eigenvectors (Eigenpairs) :
+
+The solution of this problem using Power Method.
+To compute the dominant value Lambda1( λ 1 or λ max  ) and its associated eigenvector X 1 for the n x n matrix A ( A X = λ X ). It is assumed that n eigenvalues have the dominance property | λ1 |&gt;|λ 2|&gt;=| λ3 |&gt;=....&gt;=| λ n |&gt;0. 
+ 
+How to use :
+-For example : Click button Example and then Run.
+-Input n and Max iteration, then click Active. 
+-Input entries/elements matrix A, then Run.    
+-The Result is Eigenvalue ( λ 1 ) and Eigenvector ( X 1 ). </value>
+  </data>
+  <data name="richTextBox2.Text" xml:space="preserve">
+    <value>Singular Value Decomposition (SVD) :
+
+Decomposition of Matrix A becomes Matrix U, Matrix W and Matrix VT (V Transpose).
+Multiplication of Decomposition is  A = U x W x VT .
+
+Order(size of the matrix) is :
+  -Matrix A (m x n) : rectangular
+  -Matrix U (m x m) : orthogonal
+ -Matrix W (m x n) : diagonal matrix
+ -Matrix VT (n x n) : orthogonal
+ 
+How to use :
+-For example : Click button Example and then Run.
+-Input m and n, then click Active. 
+-Input entries/elements matrix A, then Run.    
+-The Result is Matrix U, W and VT. </value>
+  </data>
+</root>
