@@ -20,9 +20,11 @@ using Runge-Kutta fourth-order formula(RK4)
 Diff equation Y'''(t)=F(t,y,y',y'')
 use IVP(Initial Value Problem)
 
-### 4. Conversion Number build in Lazarus 1.6.4 is an app for converting number from base to base (binary, octal, decimal, hexadecimal).   
+### 4. Conversion Number 
+Build in Lazarus 1.6.4 is an app for converting number from base to base (binary, octal, decimal, hexadecimal).   
 
-### 5. Matrix Determinant build in Lazarus 1.6.4 is an app for finding Determinant of Matrix using LU Decomposition.
+### 5. Matrix Determinant 
+Build in Lazarus 1.6.4 is an app for finding Determinant of Matrix using LU Decomposition.
 
 ### 6. Wave Equation
 Finite-Difference Solution for the Wave Equation Utt(t,x) = c^2 Uxx(t,x)
