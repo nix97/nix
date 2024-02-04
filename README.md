@@ -1,4 +1,4 @@
-## Subject of various math problems, mostly solved using Numerical methods :
+## The subject of various math problems, mostly solved using Numerical methods.
 
 ### 1. Partial Differential Equations(PDEs)
 The coverage of this problem are:
