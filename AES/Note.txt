@@ -1,0 +1,12 @@
+
+Cryptography using AES algorithm
+
+
+Note :
+
+-This app build in Visual Studio 2022 (.Net Framework 4.8)
+-Project Windows Desktop(win form) 
+-Use library (using System.Security.Cryptography);
+-Feel free to modify
+-by Lukas Setiawan (lukassetiawan@yahoo.com)
+ 

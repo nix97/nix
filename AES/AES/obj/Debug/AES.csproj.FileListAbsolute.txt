@@ -1,0 +1,10 @@
+E:\234\Data 2012\C#\AES\AES\bin\Debug\AES.exe.config
+E:\234\Data 2012\C#\AES\AES\bin\Debug\AES.exe
+E:\234\Data 2012\C#\AES\AES\bin\Debug\AES.pdb
+E:\234\Data 2012\C#\AES\AES\obj\Debug\AES.csproj.AssemblyReference.cache
+E:\234\Data 2012\C#\AES\AES\obj\Debug\AES.Form1.resources
+E:\234\Data 2012\C#\AES\AES\obj\Debug\AES.Properties.Resources.resources
+E:\234\Data 2012\C#\AES\AES\obj\Debug\AES.csproj.GenerateResource.cache
+E:\234\Data 2012\C#\AES\AES\obj\Debug\AES.csproj.CoreCompileInputs.cache
+E:\234\Data 2012\C#\AES\AES\obj\Debug\AES.exe
+E:\234\Data 2012\C#\AES\AES\obj\Debug\AES.pdb
