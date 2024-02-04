@@ -60,5 +60,6 @@ This app for solving Systems of Linear Equations
     
 Another works(Math stuff ,app and sourcecode on   https://bitbucket.org/nixz97/nix/downloads/)
 
+All project created by Lukas Setiawan
 e-mail: lukassetiawan@yahoo.com
 Facebook: search --> Metode Numerik - Plus Programnya 
