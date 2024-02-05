@@ -42,6 +42,7 @@ and Singular Value Decomposition(SVD).
 ### 9.Second-order ODE Solver using Runge-Kutta-Fehlberg (RKF45)
 To solving initial value problem (ivp) second-order Ordinary Differential Equation(ODE) 
 using Runge-Kutta-Fehlberg formula (RKF45).
+This formula got advantages than the RK4 classic, RKF45 have Error Estimation.
 
 ### 10. Eigenpairs Fullset
 Jacobi Iteration for Eigenvalues and Eigenvectors
