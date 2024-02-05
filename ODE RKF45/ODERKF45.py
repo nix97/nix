@@ -35,7 +35,7 @@ while again[0] in ("y", "Y"):
 
     # This part is an example that no need to input at runtime(as comment only)
     #If want activate, just delete mark '''
-    ''' 
+    '''
     DiffEquation="9*sin(5*x)-125*y-20*z"
     a=0
     b=2
@@ -43,11 +43,14 @@ while again[0] in ("y", "Y"):
     Yx0_dash=0
     M=100
     '''
+
     h=(b-a)/M
 
     x = np.zeros(M + 2)  # initial value set to zero
     Yk= np.zeros(M+2)
     Yk_dash= np.zeros(M+2)
+    ErrYk=np.zeros(M+2)  #Error Yk
+    ErrYk_dash = np.zeros(M + 2)  #Error Yk '
 
     Yk[0] = Yx0
     Yk_dash[0]=Yx0_dash
@@ -106,16 +109,20 @@ while again[0] in ("y", "Y"):
         Yk[k+1] = Yk[k] + 25/216*f1 + 1408/2565 * f3 + 2197/4101* f4-1/5*f5
         Yk_dash[k + 1] = Yk_dash[k] + 25 / 216 * g1 + 1408 / 2565 * g3 + 2197 / 4101 * g4 - 1 / 5 * g5
 
+         #Error Estimation
+        ErrYk[k+1]=abs(1/360*f1-128/4275*f3-2197/75240*f4+1/50*f5)  #Error Est Yk
+        ErrYk_dash[k + 1] = abs(1 / 360 * g1 - 128 / 4275 * g3 - 2197 / 75240 * g4 + 1 / 50 * g5)  #Error Est Y'k
+
         # RK5 Butcher
         #Yk[k+1] = Yk[k] + 16/135*f1 + 6656/12825 * f3 + 28561/56430* f4-9/50*f5+2/55*f6
         #Yk_dash[k + 1] = Yk_dash[k + 1] + 16 / 135 * g1 + 6656 / 12825 * g3 + 28561 / 56430 * g4 - 9/50*g5 +2/55 * g6
 
     # Display Final Result
     #Title
-    print("{:<7} {:<16} {:<18} {:<35}".format('k','Xk','Yk',"Y'k"))
-    print("==============================================================")
+    print("{:<7} {:<16} {:<18} {:<16} {:<20} {:<35}".format('k','Xk','Yk',"Y'k","Error Est Yk","Error Est Y'k"))
+    print("=========================================================================================================")
     for k in range(0,M+1):
-       print ("{:<5} {:<10.4f} {:<20.15f} {:<25.15f}".format(k,x[k],Yk[k],Yk_dash[k]))
+       print ("{:<5} {:<10.4f} {:<20.15f} {:<20.15f} {:<20.15f} {:<25.15f}".format(k,x[k],Yk[k],Yk_dash[k],ErrYk[k],ErrYk_dash[k]))
 
     print()
 
