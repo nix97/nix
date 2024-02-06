@@ -8,6 +8,11 @@ The coverage of this problem are:\
 -Poisson's equation using Finite-Difference method.\
 $$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$
 
+**The Cauchy-Schwarz Inequality**
+
+```math
+\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)
+```
 ### 2. System of Ordinary Differential Equation using Runge-Kutta fourth-order formula(RK4)
 
 Solving of First-Order Two Differential Equation
