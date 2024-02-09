@@ -20,6 +20,13 @@ bool getBit(int num, int i) {
 }
 ```
 
+<! Here pascal -->
+``` pascal
+for i:=1 to N do
+begin
+ i=i + x;
+end;
+
 > **Note**
 Your note text here
 
