@@ -3,11 +3,11 @@ This is just Test md file,ignore it!
 ## The subject of various math problems, mostly solved using Numerical methods.
 
 ### 1. Partial Differential Equations(PDEs)
-The coverage of this problem are:\
-- Wave equation using Finite-Difference method\
-- Heat equation using Forward-Difference method\
-- Laplace's equation Dirichlet method\
-- Poisson's equation using Finite-Difference method\
+The coverage of this problem are:
+- Wave equation using Finite-Difference method
+- Heat equation using Forward-Difference method
+- Laplace's equation Dirichlet method
+- Poisson's equation using Finite-Difference method
 
 [For further info](https://github.com/nix97/nix/wiki)
 
