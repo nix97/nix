@@ -1,4 +1,4 @@
-This is juat Test md file,ignore it!
+This is just Test md file,ignore it!
 
 ## The subject of various math problems, mostly solved using Numerical methods.
 
