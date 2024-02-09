@@ -20,7 +20,7 @@ bool getBit(int num, int i) {
 }
 ```
 
-<! Here pascal -->
+<!-- Here pascal -->
 ``` pascal
 for i:=1 to N do
 begin
