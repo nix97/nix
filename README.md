@@ -8,6 +8,10 @@ The coverage of this problem are:\
 -Heat equation using Forward-Difference method\
 -Laplace's equation Dirichlet method\
 -Poisson's equation using Finite-Difference method.
+
+
+$\sqrt{3x-1}+(1+x)^2$
+
 ### 2. System of Ordinary Differential Equation using Runge-Kutta fourth-order formula(RK4)
 
 Solving of First-Order Two Differential Equation
