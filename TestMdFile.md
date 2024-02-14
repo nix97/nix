@@ -14,6 +14,8 @@ The coverage of this problem are:
 Set multiple lines of code in fenced code blocks.
 
 
+$\sqrt{3x-1}+(1+x)^2$
+
 ``` cpp
 bool getBit(int num, int i) {
     return ((num & (1<<i)) != 0);
