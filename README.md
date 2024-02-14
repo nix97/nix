@@ -4,7 +4,9 @@
 
 ### 1. Partial Differential Equations(PDEs)
 The coverage of this problem are:\
--Wave equation using Finite-Difference method\
+- Wave equation using Finite-Difference method
+## $\frac{\partial^2 U(x,t)}{\partial t^2}=c^2\frac{\partial^2 U(x,t)}{\partial x^2}$ ##
+
 -Heat equation using Forward-Difference method\
 -Laplace's equation Dirichlet method\
 -Poisson's equation using Finite-Difference method.
