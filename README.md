@@ -13,6 +13,8 @@ Y'(t)=F(t,x,y) and
 X'(t)=F(t,x,y) 
 IVP(Initial Value Problem)
 
+\[\frac{\partial^2U(x,y)}{\partial X^2}+\frac{\partial^2U(x,y)}{\partial Y^2}=F(x,y)\]
+
 ### 3. Third-Order Differential Equation 
 using Runge-Kutta fourth-order formula(RK4)
 
