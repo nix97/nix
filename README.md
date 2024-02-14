@@ -1,5 +1,5 @@
 
-[Link to HTML file](https://nix97.github.io/nix/README.html)
+<!--[Link to HTML file](https://nix97.github.io/nix/README.html)-->
 ## The subject of various math problems, mostly solved using Numerical methods.
 
 ### 1. Partial Differential Equations(PDEs)
@@ -14,8 +14,6 @@ Solving of First-Order Two Differential Equation
 Y'(t)=F(t,x,y) and
 X'(t)=F(t,x,y) 
 IVP(Initial Value Problem)
-
-\[\frac{\partial^2U(x,y)}{\partial X^2}+\frac{\partial^2U(x,y)}{\partial Y^2}=F(x,y)\]
 
 ### 3. Third-Order Differential Equation 
 using Runge-Kutta fourth-order formula(RK4)
