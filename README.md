@@ -1,7 +1,7 @@
 ## The subject of various math problems, mostly solved using Numerical methods.
 
 ### 1. Partial Differential Equations(PDEs)
-**The coverage of this problem are:**
+**The coverage of these problem is:**
 - Wave equation using Finite-Difference method.
 - Heat equation using Forward-Difference method.
 - Laplace's equation Dirichlet method.
