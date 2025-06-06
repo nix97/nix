@@ -1,3 +1,10 @@
+# nix
+
+![License](https://img.shields.io/github/license/nix97/nix)
+![Issues](https://img.shields.io/github/issues/nix97/nix)
+![Stars](https://img.shields.io/github/stars/nix97/nix)
+![Language](https://img.shields.io/badge/Language-Delphi-EA1F63?logo=delphi&logoColor=white)
+![Repo Type](https://img.shields.io/badge/Purpose-Experiments%20%7C%20Core-blue)
 ## The subject of various math problems, mostly solved using Numerical methods.
 
 ### 1. Partial Differential Equations(PDEs)
