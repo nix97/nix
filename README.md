@@ -3,8 +3,9 @@
 ![License](https://img.shields.io/github/license/nix97/nix)
 ![Issues](https://img.shields.io/github/issues/nix97/nix)
 ![Stars](https://img.shields.io/github/stars/nix97/nix)
-![Repo Type](https://img.shields.io/badge/Purpose-Experiments%20%7C%20Core-blue)
 ![Delphi](https://img.shields.io/badge/Built%20with-Delphi-red?logo=delphi&logoColor=white)
+![Lazarus](https://img.shields.io/badge/Built%20with-Lazarus-blue?logo=pascal)
+![Language](https://img.shields.io/badge/Language-C%23-239120?logo=c-sharp&logoColor=white)
 
 ## The subject of various math problems, mostly solved using Numerical methods.
 
