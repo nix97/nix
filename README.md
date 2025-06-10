@@ -96,7 +96,7 @@ For counting this problem using Heron's formula.
 
 
 
-Another works(Math stuff, Numerical Metgods,app and sourcecode on   (https://sourceforge.net/projects/nix/files/)
+Another works(Math stuff, Numerical Metgods,app and sourcecode on   https://sourceforge.net/projects/nix/files/
 
 Created by Lukas Setiawan\
 e-mail: lukassetiawan@yahoo.com\
