@@ -6,7 +6,6 @@
 ![Delphi](https://img.shields.io/badge/Built%20with-Delphi-red?logo=delphi&logoColor=white)
 ![Lazarus](https://img.shields.io/badge/Built%20with-Lazarus-blue?logo=pascal)
 ![Language](https://img.shields.io/badge/Language-C%23-239120?logo=c-sharp&logoColor=white)
-![GitHub release downloads](https://img.shields.io/github/downloads/nix97/nix/latest/total)
 
 ## The subject of various math problems, mostly solved using Numerical methods.
 
